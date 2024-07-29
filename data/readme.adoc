@@ -1,3 +1,4 @@
 = Dateibeschreibung
 
-* *<Dateiname>:* Diese Datei enthält <zu ergänzen>.
+* *Stammdaten_SZ_Oekomorphologie_Fliessgewaesser_V1.xtf:* Kataloge für die Modell-Version V1
+* *Stammdaten_SZ_Oekomorphologie_Fliessgewaesser_V1_1.xtf:* Kataloge für die Modell-Version V1.1. Inhaltlich sind die Versionen V1 und V1.1 identisch.
