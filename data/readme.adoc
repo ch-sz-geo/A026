@@ -1,4 +1,12 @@
 = Dateibeschreibung
 
-* *Stammdaten_SZ_Oekomorphologie_Fliessgewaesser_V1.xtf:* Kataloge für die Modell-Version V1
-* *Stammdaten_SZ_Oekomorphologie_Fliessgewaesser_V1_1.xtf:* Kataloge für die Modell-Version V1.1. Inhaltlich sind die Versionen V1 und V1.1 identisch.
+[cols=*,options="header"]
+|===
+| Dateiname | Beschreibung | Modell (Version)
+| *Stammdaten_SZ_Oekomorphologie_Fliessgewaesser_V1.xtf*
+| Diese Datei enthält die Stammdaten für die entsprechende Modellversion (siehe rechts).
+| SZ_Oekomorphologie_Fliessgewaesser_V1 (2024-01-04)
+| *Stammdaten_SZ_Oekomorphologie_Fliessgewaesser_V1_1.xtf*
+| Diese Datei enthält die Stammdaten für die entsprechende Modellversion (siehe rechts). Inhaltlich ist diese Version V1 und V1.1 identisch.
+| SZ_Oekomorphologie_Fliessgewaesser_V1_1 (2024-07-24)
+|===
