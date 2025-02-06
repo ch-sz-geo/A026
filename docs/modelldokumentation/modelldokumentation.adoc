@@ -1,6 +1,6 @@
 // Hier den Titel eingeben
-:title: Modelldokumentation 
-:subtitle: Ökomorphologie der Fliessgewässer (A026)
+:title: Ökomorphologie der Fliessgewässer (A026)
+:subtitle: Modelldokumentation
 ifdef::backend-pdf[]
 = {title}
 {subtitle}
