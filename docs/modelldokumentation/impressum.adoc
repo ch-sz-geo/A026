@@ -8,8 +8,8 @@
 |===
 | Erstelldatum | 2024-01-01
 | letzte Änderung | {docdate}
-| Themen-Nummer | Annn
-| ID nach kGeoiV | --- 
+| Themen-Nummer | A026
+| ID nach kGeoiV | 191.1 
 | Beteiligte | Person 1, Fachexperte (Kürzel 1), Amt 1 + 
 Kuno Epper, Modellierer (kep), Amt für Geoinformation
 |===
