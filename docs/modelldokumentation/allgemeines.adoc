@@ -2,7 +2,7 @@
 === Ziel und Zweck
 Dieses Dokument beschreibt den Geobasisdatensatz
  
-* *__<<<<<Ökomorphologie der Fliessgewässer>>>>>__.*
+* *Ökomorphologie der Fliessgewässer*
 
 __<weitere Beschreibungen>__
 
