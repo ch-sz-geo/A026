@@ -1,75 +1,117 @@
 == Modelltransformationen
-=== Transformation vom Bearbeitungsmodell ins Publikationsmodell
+=== [todo] Transformation vom Bearbeitungsmodell ins Publikationsmodell
 * Quellmodell: https://raw.githubusercontent.com/ch-sz-geo/A064/refs/heads/main/models/SZ_Schutzwald_V1_Bearbeitung.ili[Bearbeitungsmodell "SZ_Schutzwald_V1" (Version: 2025-01-23)]
 * Zielmodell: https://raw.githubusercontent.com/ch-sz-geo/A064/refs/heads/main/models/SZ_Schutzwald_V1.ili[Publikationsmodell verwaltungsintern "SZ_Schutzwald_V1_Bearbeitung" (Version: 2025-01-23)]
 
 === Transformation ins minimale Geodatenmodell des Bundes
 * Quellmodell: Das hier beschriebene Datenmodell
-* Zielmodell: http://models.geo.admin.ch/BAFU/todo[<Modellname> (Version: 2023-03-20)]
+* Zielmodell: https://models.geo.admin.ch/BAFU/Revitalisierung_Fliessgewaesser_V1_2.ili[Revitalisierung_Fliessgewaesser_V1_2 (Version: 2024-06-13)]
 
-=== Transformation ins Transfermodell ÖREB-Kataster
-* Quellmodell: Das hier beschriebene Datenmodell
-* Zielmodell: https://models.geo.admin.ch/V_D/OeREB/OeREBKRMtrsfr_V2_0.ili[OeREBKRMtrsfr_V2_0 (Version: 2021-04-14)]
-
-==== Klasse `+DarstellungsDienst+`
+==== Klasse `+AbschOekomorph+`
 [cols=2*,options="header"]
 |===
 | Quellattribut | Zielattribut
-| `+ch.sz.a094b.oereb.wald.statische_waldgrenze.linie+`
-| `+VerweisWMS+`
+| Liniengeometrie, gebildet über die lineare Referenzierung auf der Grundlage von `+Achsgeometrie+` sowie `+LinearpositionVon+` und `+LinearpositionBis+`
+| `+Abschnitt+`
+| `+Sohlenbreite+`
+| `+Sohlenbreite+`
+| - - -
+| `+Eindolung+`
+| Wert von `+Breitenvariabilitaet.OID+` +
+hergeleitet über `+Breitenvariabilitaet__AbschOekomorph.rBreitenvariabilitaet+`
+| `+Breitenvariabilitaet+`
+| Wert von `+Tiefenvariabilitaet.OID+` +
+hergeleitet über `+Tiefenvariabilitaet__AbschOekomorph.rTiefenvariabilitaet+`
+| `+Tiefenvariabilitaet+`
+| Wert von `+Sohlenverbauung.OID+` +
+hergeleitet über `+Sohlenverbauung__AbschOekomorph.rSohlenverbauung+`
+| `+Sohlenverbauung+`
+| Wert von `+Sohlmaterial.OID+` +
+hergeleitet über `+Sohlmaterial__AbschOekomorph.rSohlmaterial+`
+| `+Sohlmaterial+`
+| Wert von `+Boeschungsfussverbau.OID+` +
+hergeleitet über `+BoeschungsfussverbauLinks__AbschOekomorph.rBoeschungsfussverbauLinks+`
+| `+BoeschVB_l+`
+| Wert von `+Boeschungsfussverbau.OID+` +
+hergeleitet über `+BoeschungsfussverbauRechts__AbschOekomorph.rBoeschungsfussverbauRechts+`
+| `+BoeschVB_r+`
+| Wert von `+Boeschungsmaterial.OID+` +
+hergeleitet über `+BoeschungsmaterialLinks__AbschOekomorph.rBoeschungsmaterialLinks+`
+| `+Material_l+`
+| Wert von `+Boeschungsmaterial.OID+` +
+hergeleitet über `+BoeschungsmaterialRechts__AbschOekomorph.rBoeschungsmaterialRechts+`
+| `+Material_r+`
+| `+UferbreiteLinks+`
+| `+Uferbrei_l+`
+| `+UferbreiteRechts+`
+| `+Uferbrei_r+`
+| Wert von `+Uferbeschaffenheit.OID+` +
+hergeleitet über `+UferbeschaffenheitLinks__AbschOekomorph.rUferbeschaffenheitLinks+`
+| `+Uferbesc_l+`
+| Wert von `+Uferbeschaffenheit.OID+` +
+hergeleitet über `+UferbeschaffenheitRechts__AbschOekomorph.rUferbeschaffenheitRechts+`
+| `+Uferbesc_r+`
+| Wert von `+Bewuchs.OID+` +
+hergeleitet über `+Algenbewuchs__AbschOekomorph.rAlgenbewuchs+`
+| `+Algenbewuchs+`
+| Wert von `+Bewuchs.OID+` +
+hergeleitet über `+Makrophytenbewuchs__AbschOekomorph.rMakrophytenbewuchs+`
+| `+Makrophytenbewuchs+`
+| Wert von `+Totholz.OID+` +
+hergeleitet über `+Totholz__AbschOekomorph.rTotholz+`
+| `+Totholz+`
+| Wert von `+Klasse.OID+` +
+hergeleitet über `+Klasse__AbschOekomorph.rKlasse+`
+| `+Klasse+`
+| `+Bemerkung+`
+| `+Notizen+`
 |===
 
-==== Klasse `+Eigentumsbeschraenkung+`
+==== Klasse `+Absturz+`
 [cols=2*,options="header"]
 |===
 | Quellattribut | Zielattribut
-| Der Wert für `+Rechtsstatus+` wird regelbasiert abgeleitet (siehe unten) | `+Rechtsstatus+`
-| Datum, an dem die Publikation im ÖREB-Katastersystem erfolgt; wird durch den Publikationsprozess gesetzt m| publiziertAb
-| (aktuell nicht verwendet und daher leer) m| publiziertBis
+| Punktgeometrie, gebildet über die lineare Referenzierung auf der Grundlage von `+Achsgeometrie+` und `+Linearposition+` | `+Ort+`
+| `+Schutzbauten_ID+` | `+Nummer+`
+| Wert von `+Absturztyp.OID+` +
+hergeleitet über `+Absturztyp__Absturz.rAbsturztyp+` | `+Typ+`
+| Wert von `+Absturzmaterial.OID+` +
+hergeleitet über `+Absturzmaterial__Absturz.rAbsturzmaterial+` | `+Material+`
+| `+Hoehe+` | `+Hoehe+`
+| `+Bemerkung+` | `+Notizen+`
 |===
 
-Regeln für die Ableitung des Wertes für `+Rechtsstatus+`:
-|===
-h| Regel h| Rechtsstatus
-a| Der Wert von `+Waldgrenze.Begruendungsverfahren+` muss gesetzt sein und der Wert von `+Waldgrenze.Aufhebungsverfahren+` muss leer sein. +
-Zudem darf der Code des Waldfeststellungstatus `+Verfahrensstatus.Code+` (hergeleitet über `+Waldfeststellung.rVerfahrensstatus+`) nicht einer der folgenden Werte aufweisen: 'abgeschlossen', 'abgeschlossen_ohne_Verfuegung', 'unbekannt'.
-| `+laufendeAenderung_Begruendung+`
-| Der Wert von `+Waldgrenze.Begruendungsverfahren+` muss gesetzt sein und der Wert von `+Waldgrenze.Aufhebungsverfahren+` muss leer sein. +
-Zudem muss der Code des Waldfeststellungstatus `+Verfahrensstatus.Code+` (hergeleitet über `+Waldfeststellung.rVerfahrensstatus+`) den Wert 'abgeschlossen' aufweisen. | `+inKraft+`
-| Die Werte von `+Waldgrenze.Begruendungsverfahren+` und `+Waldgrenze.Aufhebungsverfahren+` müssen gesetzt sein. +
-Zudem darf der Code des Waldfeststellungstatus `+Verfahrensstatus.Code+` des Aufhebungsverfahrens (hergeleitet über `+Waldfeststellung.rVerfahrensstatus+`) nicht einer der folgenden Werte aufweisen: 'abgeschlossen', 'abgeschlossen_ohne_Verfuegung', 'unbekannt'.
-| `+laufendeAenderung_Aufhebung+`
-| Die Werte von `+Waldgrenze.Begruendungsverfahren+` und `+Waldgrenze.Aufhebungsverfahren+` müssen gesetzt sein. +
-Zudem muss der Code des Waldfeststellungstatus `+Verfahrensstatus.Code+` des Aufhebungsverfahrens (hergeleitet über `+Waldfeststellung.rVerfahrensstatus+`) den Wert 'abgeschlossen' aufweisen.
-| `+inKraft_Aufhebung+`
-|===
-
-==== Klasse `+Geometrie+`
+==== Klasse `+Bauwerk+`
 [cols=2*,options="header"]
 |===
 | Quellattribut | Zielattribut
-| - - - m| Punkt
-m| Waldgrenze.Geometrie m| Linie
-| - - - m| Flaeche
-| analog `+Eigentumsbeschraenkung.Rechtsstatus+` m| Rechtsstatus
-| analog `+Eigentumsbeschraenkung.publiziertAb+` m| publiziertAb
-| analog `+Eigentumsbeschraenkung.publiziertBis+` m| publiziertBis
-| https://www.geocat.ch/geonetwork/srv/ger/catalog.search#/metadata/8646c41b-543e-401f-836d-4b6beca7370d[Link auf GeoCat] m| MetadatenGeobasisdaten
+| Punktgeometrie, gebildet über die lineare Referenzierung auf der Grundlage von `+Achsgeometrie+` sowie `+Linearposition+` und `+Querabstand+` | `+Ort+`
+| `+Schutzbauten_ID+` | `+Identifikator+`
+| Wert von `+Bauwerktyp.OID+` +
+hergeleitet über `+Bauwerktyp__Bauwerk.rBauwerktyp+` | `+Typ+`
+| `+Hoehe+` | `+Hoehe+`
+| `+Bemerkung+` | `+Notizen+`
 |===
 
-==== Klasse `+LegendeEintrag+`
+==== Klasse `+AbschOEB+`
+Die Daten zu dieser Klasse werden im Thema A180 geführt. Die Transformationsregel finden sich hier: todo (Verlinkung)
+
+==== Klasse `+AbschNutzen+`
+Die Daten zu dieser Klasse werden im Thema A180 geführt. Die Transformationsregel finden sich hier: todo (Verlinkung)
+
+==== Klasse `+AbschPrio+`
+Die Daten zu dieser Klasse werden im Thema A180 geführt. Die Transformationsregel finden sich hier: todo (Verlinkung)
+
+==== Klasse `+AbsturzNutzen+`
 [cols=2*,options="header"]
 |===
 | Quellattribut | Zielattribut
-m| Typ.Symbol m| Symbol
-m| Typ.Name m| LegendeText
-m| Typ.Code m| ArtCode
-m| https://data.geo.sz.ch/public/Themen/A057b/[Legende.xml] m| ArtCodeliste
-| fix: " `+ch.StatischeWaldgrenzen+` " m| Thema
-| - - - m| SubThema
+| Wert von `+Nutzen.OID+` +
+hergeleitet über `+Nutzen__Absturz.rNutzen+` | `+Nutzen+`
+| `+Bemerkung_Nutzen+` | `+Bemerkung+`
 |===
 
-=== Transformation ins WebGIS
+=== [todo] Transformation ins WebGIS
 * Quellmodell: Das hier beschriebene Datenmodell
 * Zielmodell: keines (siehe unten)
 
@@ -112,15 +154,6 @@ hergeleitet über: +
 m| verfuegung_datum_nr
 m| Stockgrenze.Geometrie m| geom
 |===
-
-[cols="e,m,^,>s",width="25%"]
-|===
-|1 >s|2 |3 |4
-^|5 2.2+^.^|6 .3+<.>m|7
-^|8
-|9 2+>|10
-|===
-
 
 ifdef::backend-pdf[]
 <<<
