@@ -94,13 +94,13 @@ hergeleitet über `+Bauwerktyp__Bauwerk.rBauwerktyp+` | `+Typ+`
 |===
 
 ==== Klasse `+AbschOEB+`
-Die Daten zu dieser Klasse werden im Thema A180 geführt. Die Transformationsregel finden sich hier: todo (Verlinkung)
+Die Daten zu dieser Klasse werden im Thema A180 geführt. Die Transformationsregel finden sich https://ch-sz-geo.github.io/A180/docs/modelldokumentation.html#_transformation_ins_minimale_geodatenmodell_des_bundes[hier].
 
 ==== Klasse `+AbschNutzen+`
-Die Daten zu dieser Klasse werden im Thema A180 geführt. Die Transformationsregel finden sich hier: todo (Verlinkung)
+Die Daten zu dieser Klasse werden im Thema A180 geführt. Die Transformationsregel finden sich https://ch-sz-geo.github.io/A180/docs/modelldokumentation.html#_transformation_ins_minimale_geodatenmodell_des_bundes[hier].
 
 ==== Klasse `+AbschPrio+`
-Die Daten zu dieser Klasse werden im Thema A180 geführt. Die Transformationsregel finden sich hier: todo (Verlinkung)
+Die Daten zu dieser Klasse werden im Thema A180 geführt. Die Transformationsregel finden sich https://ch-sz-geo.github.io/A180/docs/modelldokumentation.html#_transformation_ins_minimale_geodatenmodell_des_bundes[hier].
 
 ==== Klasse `+AbsturzNutzen+`
 [cols=2*,options="header"]
