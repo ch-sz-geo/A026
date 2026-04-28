@@ -1,23 +1,17 @@
 = Dateibeschreibung
 
-Die Datei `+Stammdaten.xtf+` enthält die Stammdaten. Alle Änderungen an dieser Datei werden dort vorgenommen und über GitHub mit einer eindeutigen Identifikationsnummer (Commit-Hash-ID) versehen. Mithilfe dieser ID können frühere Versionen der Datei jederzeit abgerufen werden.
+Bei der Bewirtschaftung eines Themas gibt es Attribute, deren Werte nicht frei vergeben, sondern aus einer vorgegebenen Liste selektiert werden müssen. Dies gilt z.B. für den Gemeindenamen, welcher aus einer Liste der Schwyzer Gemeinden auszuwählen ist. Bei den vorgegebenen Werten spricht man von Stammdaten. Sie werden in einer eigenen Datei abgelegt und dienen als Grundlage für die Datenerfassung.
 
-Die folgende Tabelle fasst die relevanten Versionen der Stammdaten zusammen:
+Wie das Datenmodell, können auch die Stammdaten über die Zeit Änderungen erfahren. Zu einem bestimmten Zeitpunkt gibt es jedoch pro Datenmodellversion nur genau eine Stammdatenversion, welche gültig ist. Die nachfolgende Tabelle gibt einen Überblick, welche Stammdatenversion mit welcher Modellversion genutzt werden muss.
 
-[cols=*,options="header"]
+[cols="20%, 20%, 20%, 40%",options="header"]
 |===
-| Dateiname | Beschreibung | Modell (Version) | aktuell
-| https://raw.githubusercontent.com/ch-sz-geo/A057/main/data/Stammdaten.xtf[*Stammdaten.xtf*]
+| Modell +
+(Version) | Stammdaten- +
+kennung | gültig ab | Beschreibung
+| SZ_Oekomorphologie_Fliessgewaesser_V1_1 +
+(2024-07-24)
+| https://raw.githubusercontent.com/ch-sz-geo/A026/Bearbeitung/data/Stammdaten.xtf[*2000-01-01*]
+| 2000-01-01
 | Diese Datei enthält die aktuell gültigen Stammdaten für die Datenerfassung.
-| SZ_Waldfeststellungen_V2 (2023-09-08)
-^a| ✅
-| https://raw.githubusercontent.com/ch-sz-geo/A057/975ed27935c993bc6133e3471760b7fd27ca4b08/data/Stammdaten.xtf[*Stammdaten_2025-02-05.xtf*]
-| Diese Datei enthält die Stammdaten für die Datenerfassung nach dem rechts aufgeführten Datenmodell. +
-Im Vergleich zur Vorversion (2000-01-01) wurde der Typ des Wirkbereichs ergänzt.
-| SZ_Waldfeststellungen_V2 (2023-09-08)
-^a| ⬜
-| https://raw.githubusercontent.com/ch-sz-geo/A057/d9f4d0431493d536b0b97b7a6766bf9d42efa508/data/Stammdaten.xtf[*Stammdaten_2000-01-01.xtf*]
-| Diese Datei enthält die Stammdaten für die Datenerfassung nach dem rechts aufgeführten Datenmodell.
-| SZ_Waldfeststellungen_V2 (2023-09-08)
-^a| ⬜
 |===
