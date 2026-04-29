@@ -2,12 +2,11 @@
 === Topic `+Stammdaten+`
 Das Topic `+Stammdaten+` umfasst alle statischen Werte. Darunter fallen z.B. die Aufzählwerte von Listen (INTERLIS-Datentyp «Aufzählung»). Jede Liste wird in einer eigenen Klasse modelliert.
 
-Die Stammdaten werden durch die zuständige Stelle vorgegeben. Bei Bundesthemen ist dies das für die Modellierung zuständige Bundesamt. Bei kantonalen Themen das zuständige kantonale Amt. Die Stammdaten von Bundesthemen können auf der Stufe Kanton erweitert werden. Die kantonalen Erweiterungen werden bei der Überführung ins Bundesmodell den entsprechenden Bundestypen zugeordnet. Bei Bedarf werden die Stammdaten durch die Abteilung Geoinformation nachgeführt und im https://github.com/ch-sz-geo/A000_template/tree/main/data[data-Verzeichnis] des jeweiligen Themas veröffentlicht.
+Die Stammdaten werden durch die zuständige Stelle vorgegeben. Bei Bundesthemen ist dies das für die Modellierung zuständige Bundesamt. Bei kantonalen Themen das zuständige kantonale Amt. Die Stammdaten von Bundesthemen können auf der Stufe Kanton erweitert werden. Die kantonalen Erweiterungen werden bei der Überführung ins Bundesmodell den entsprechenden Bundestypen zugeordnet. Bei Bedarf werden die Stammdaten durch die Abteilung Geoinformation nachgeführt und im https://github.com/ch-sz-geo/A026/tree/main/data[data-Verzeichnis] des jeweiligen Themas veröffentlicht.
 
 ==== Klasse `+Katalogeintrag+`
 Die Klasse `+Katalogeintrag+` enthält die allgemeinen, für alle Kataloge gemeinsamen Attribute. Die Klasse selber ist abstrakt: Es gibt keine Objekte `+Katalogeintrag+`, sondern nur Objekte von den spezialisierten Klassen.
 
-Spaltenbreite Variante 1:
 [cols="10%, 60%, 20%, 10%",options="header"]
 |===
 | Name | Beschreibung | Beispiel | Freigabe
@@ -33,34 +32,8 @@ m| Bemerkung
 | öffentlich
 |===
 
-Spaltenbreite Variante 2:
-[cols=4*,options="header"]
-|===
-| Name | Beschreibung | Beispiel | Freigabe
-m| OID
-| technischer Objektidentifikator
-| ceaa37a9-8614-43fc-9a8b-688f95c30218
-| öffentlich
-m| Code
-| Code des Listeneintrages; entspricht in INTERLIS dem Wert der Aufzählung und muss ein gültiger INTERLIS-Name sein (siehe https://www.interlis.ch/dokumentation[INTERLIS-Referenzhandbuch])
-| in_Aenderung
-| öffentlich
-m| Name
-| Bezeichnung des Katalogeintrages, wie er den Nutzenden angezeigt wird
-| in Änderung
-| öffentlich
-m| SortierNr
-| Reihenfolge des Katalogeintrages in der Auswahlliste
-| 1
-| öffentlich
-m| Bemerkung
-| Erläuterung, welche den Katalogeintrag näher beschreibt
-| Dieser Status wird für alle Objekte verwendet, bei denen aktuell eine Nachführung läuft.
-| öffentlich
-|===
-
-==== Klasse `+Standard-Katalogeintrag+`
-Die Verbindlichkeit kam mit der Aufnahme der statischen Waldgrenzen in den ÖREB-Kataster. Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+==== Klasse `+Breitenvariabilitaet+`
+Die Klasse `+Breitenvariabilitaet+` führt die Werte des Katalogs "Breitenvariabilitaet". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
 
 [cols=4*,options="header"]
 |===
@@ -73,49 +46,249 @@ m|Name
 3+| Die Werte müssen eindeutig sein
 |===
 
-==== Klasse `+separate Stammdaten+`
-Über den Typ wird die Art der Geometrie festgelegt.
+==== Klasse `+Tiefenvariabilitaet+`
+Die Klasse `+Tiefenvariabilitaet+` führt die Werte des Katalogs "Tiefenvariabilitaet". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
 
-In der Klasse `+Typ+` wurde anfänglich auch der Typ des Wirkbereiches aufgeführt. Weil ein Wirkbereich jedoch stets gleich symbolisiert wird, wurde entschieden, auf diesen Eintrag zu verzichtet.
 [cols=4*,options="header"]
 |===
 | Name | Beschreibung | Beispiel | Freigabe
-m| OID
-| technischer Objektidentifikator
-| ceaa37a9-8614-43fc-9a8b-688f95c30218
-| öffentlich
-m| Code
-| Code des Listeneintrages; entspricht in INTERLIS dem Wert der Aufzählung und muss ein gültiger INTERLIS-Name sein (siehe https://www.interlis.ch/dokumentation[INTERLIS-Referenzhandbuch])
-| ausserhalb_Bauzonen_statisch
-| öffentlich
-m| Name
-| Bezeichnung des Katalogeintrages, wie er den Nutzenden angezeigt wird
-| Waldgrenze ausserhalb Bauzone (statisch)
-| öffentlich
-m| Abkuerzung
-| Kurzform des Katalogeintrages
-| WGraB_s
-| öffentlich
-m| SortierNr
-| Reihenfolge des Katalogeintrages in der Auswahlliste
-| 2
-| öffentlich
-m| Bemerkung
-| Erläuterung, welche den Katalogeintrag näher beschreibt
-| Statische Waldgrenze in Gebieten ausserhalb der Bauzonen, in denen der Kanton eine Zunahme des Waldes verhindern will.
-| öffentlich
-m| Symbol
-| Bild des Legendeneintrages; codiert als Base64-Wert
-| iVBORw0KGg... (gekürzt)
-| öffentlich
+4+| _Diese Klasse führt keine zusätzlichen Attribute_
+4+| *Anforderungen*
+m|Code
+3+| Die Werte müssen eindeutig sein
+m|Name
+3+| Die Werte müssen eindeutig sein
 |===
 
+==== Klasse `+Sohlenverbauung+`
+Die Klasse `+Sohlenverbauung+` führt die Werte des Katalogs "Sohlenverbauung". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+
+[cols=4*,options="header"]
+|===
+| Name | Beschreibung | Beispiel | Freigabe
+4+| _Diese Klasse führt keine zusätzlichen Attribute_
+4+| *Anforderungen*
+m|Code
+3+| Die Werte müssen eindeutig sein
+m|Name
+3+| Die Werte müssen eindeutig sein
+|===
+
+==== Klasse `+Sohlmaterial+`
+Die Klasse `+Sohlmaterial+` führt die Werte des Katalogs "Sohlmaterial". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+
+[cols=4*,options="header"]
+|===
+| Name | Beschreibung | Beispiel | Freigabe
+4+| _Diese Klasse führt keine zusätzlichen Attribute_
+4+| *Anforderungen*
+m|Code
+3+| Die Werte müssen eindeutig sein
+m|Name
+3+| Die Werte müssen eindeutig sein
+|===
+
+==== Klasse `+Boeschungsfussverbau+`
+Die Klasse `+Boeschungsfussverbau+` führt die Werte des Katalogs "Boeschungsfussverbau". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+
+[cols=4*,options="header"]
+|===
+| Name | Beschreibung | Beispiel | Freigabe
+4+| _Diese Klasse führt keine zusätzlichen Attribute_
+4+| *Anforderungen*
+m|Code
+3+| Die Werte müssen eindeutig sein
+m|Name
+3+| Die Werte müssen eindeutig sein
+|===
+
+==== Klasse `+Boeschungsmaterial+`
+Die Klasse `+Boeschungsmaterial+` führt die Werte des Katalogs "Boeschungsmaterial". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+
+[cols=4*,options="header"]
+|===
+| Name | Beschreibung | Beispiel | Freigabe
+4+| _Diese Klasse führt keine zusätzlichen Attribute_
+4+| *Anforderungen*
+m|Code
+3+| Die Werte müssen eindeutig sein
+m|Name
+3+| Die Werte müssen eindeutig sein
+|===
+
+==== Klasse `+Uferbeschaffenheit+`
+Die Klasse `+Uferbeschaffenheit+` führt die Werte des Katalogs "Uferbeschaffenheit". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+
+[cols=4*,options="header"]
+|===
+| Name | Beschreibung | Beispiel | Freigabe
+4+| _Diese Klasse führt keine zusätzlichen Attribute_
+4+| *Anforderungen*
+m|Code
+3+| Die Werte müssen eindeutig sein
+m|Name
+3+| Die Werte müssen eindeutig sein
+|===
+
+==== Klasse `+Bewuchs+`
+Die Klasse `+Bewuchs+` führt die Werte des Katalogs "Bewuchs". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+
+[cols=4*,options="header"]
+|===
+| Name | Beschreibung | Beispiel | Freigabe
+4+| _Diese Klasse führt keine zusätzlichen Attribute_
+4+| *Anforderungen*
+m|Code
+3+| Die Werte müssen eindeutig sein
+m|Name
+3+| Die Werte müssen eindeutig sein
+|===
+
+==== Klasse `+Totholz+`
+Die Klasse `+Totholz+` führt die Werte des Katalogs "Totholz". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+
+[cols=4*,options="header"]
+|===
+| Name | Beschreibung | Beispiel | Freigabe
+4+| _Diese Klasse führt keine zusätzlichen Attribute_
+4+| *Anforderungen*
+m|Code
+3+| Die Werte müssen eindeutig sein
+m|Name
+3+| Die Werte müssen eindeutig sein
+|===
+
+==== Klasse `+Klasse+`
+Die Klasse `+Klasse+` führt die Werte des Katalogs "Klasse". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+
+[cols=4*,options="header"]
+|===
+| Name | Beschreibung | Beispiel | Freigabe
+4+| _Diese Klasse führt keine zusätzlichen Attribute_
+4+| *Anforderungen*
+m|Code
+3+| Die Werte müssen eindeutig sein
+m|Name
+3+| Die Werte müssen eindeutig sein
+|===
+
+==== Klasse `+Uferbereich+`
+Die Klasse `+Uferbereich+` führt die Werte des Katalogs "Uferbereich". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+
+[cols=4*,options="header"]
+|===
+| Name | Beschreibung | Beispiel | Freigabe
+4+| _Diese Klasse führt keine zusätzlichen Attribute_
+4+| *Anforderungen*
+m|Code
+3+| Die Werte müssen eindeutig sein
+m|Name
+3+| Die Werte müssen eindeutig sein
+|===
+
+==== Klasse `+Umlandnutzung+`
+Die Klasse `+Umlandnutzung+` führt die Werte des Katalogs "Umlandnutzung". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+
+[cols=4*,options="header"]
+|===
+| Name | Beschreibung | Beispiel | Freigabe
+4+| _Diese Klasse führt keine zusätzlichen Attribute_
+4+| *Anforderungen*
+m|Code
+3+| Die Werte müssen eindeutig sein
+m|Name
+3+| Die Werte müssen eindeutig sein
+|===
+
+==== Klasse `+Gefaelle+`
+Die Klasse `+Gefaelle+` führt die Werte des Katalogs "Gefaelle". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+
+[cols=4*,options="header"]
+|===
+| Name | Beschreibung | Beispiel | Freigabe
+4+| _Diese Klasse führt keine zusätzlichen Attribute_
+4+| *Anforderungen*
+m|Code
+3+| Die Werte müssen eindeutig sein
+m|Name
+3+| Die Werte müssen eindeutig sein
+|===
+
+==== Klasse `+Laichsubstrat+`
+Die Klasse `+Laichsubstrat+` führt die Werte des Katalogs "Laichsubstrat". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+
+[cols=4*,options="header"]
+|===
+| Name | Beschreibung | Beispiel | Freigabe
+4+| _Diese Klasse führt keine zusätzlichen Attribute_
+4+| *Anforderungen*
+m|Code
+3+| Die Werte müssen eindeutig sein
+m|Name
+3+| Die Werte müssen eindeutig sein
+|===
+
+==== Klasse `+Absturztyp+`
+Die Klasse `+Absturztyp+` führt die Werte des Katalogs "Absturztyp". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+
+[cols=4*,options="header"]
+|===
+| Name | Beschreibung | Beispiel | Freigabe
+4+| _Diese Klasse führt keine zusätzlichen Attribute_
+4+| *Anforderungen*
+m|Code
+3+| Die Werte müssen eindeutig sein
+m|Name
+3+| Die Werte müssen eindeutig sein
+|===
+
+==== Klasse `+Absturzmaterial+`
+Die Klasse `+Absturzmaterial+` führt die Werte des Katalogs "Absturzmaterial". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+
+[cols=4*,options="header"]
+|===
+| Name | Beschreibung | Beispiel | Freigabe
+4+| _Diese Klasse führt keine zusätzlichen Attribute_
+4+| *Anforderungen*
+m|Code
+3+| Die Werte müssen eindeutig sein
+m|Name
+3+| Die Werte müssen eindeutig sein
+|===
+
+==== Klasse `+Nutzen+`
+Die Klasse `+Nutzen+` führt die Werte des Katalogs "Nutzen". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+
+[cols=4*,options="header"]
+|===
+| Name | Beschreibung | Beispiel | Freigabe
+4+| _Diese Klasse führt keine zusätzlichen Attribute_
+4+| *Anforderungen*
+m|Code
+3+| Die Werte müssen eindeutig sein
+m|Name
+3+| Die Werte müssen eindeutig sein
+|===
+
+==== Klasse `+Bauwerktyp+`
+Die Klasse `+Bauwerktyp+` führt die Werte des Katalogs "Bauwerktyp". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+
+[cols=4*,options="header"]
+|===
+| Name | Beschreibung | Beispiel | Freigabe
+4+| _Diese Klasse führt keine zusätzlichen Attribute_
+4+| *Anforderungen*
+m|Code
+3+| Die Werte müssen eindeutig sein
+m|Name
+3+| Die Werte müssen eindeutig sein
+|===
 
 === Topic `+Fachdaten+`
 Das Topic `+Fachdaten+` umfasst die eigentlichen, fachlichen Klassen des Themas.
 
-==== Klasse `+Klasse1+`
-Die Klasse `+Klasse1+` führt .....
+==== Klasse `+AbschOekomorph+`
+Die Klasse `+AbschOekomorph+` führt die Informationen zu ökomorphologischen Klassierung eines definierten Abschnittes.
 
 [cols=4*,options="header"]
 |===
@@ -123,6 +296,10 @@ Die Klasse `+Klasse1+` führt .....
 m| OID
 | technischer Objektidentifikator
 | ceaa37a9-8614-43fc-9a8b-688f95c30218
+| öffentlich
+m| Kennung
+| eindeutige Kennung des Abschnittes
+| 1234
 | öffentlich
 m| erfasstVon
 | Loginname der Person, welche den Datensatz erstellt hat (Autor); wird durch das System gesetzt
@@ -140,111 +317,287 @@ m| geaendertAm
 | Datum und Zeit, an dem der Datensatz zuletzt geändert wurde; wird durch das System gesetzt
 | 2024-07-30T08:07:57
 | öffentlich
-m| gueltigVon
-| Datum, an dem das Objekt rechtskräftig wurde bzw. wird. Es gilt der Zeitpunkt mittags um 12:00 Uhr. Das Datum kann sowohl in der Vergangenheit wie auch in der Zukunft liegen.
-| 2024-01-01
+m| Achsgeometrie
+| todo
+| todo
 | öffentlich
-m| gueltigBis
-| Datum, an dem das Objekt rechtskräftig aufgehoben wurde bzw. wird. Es gilt der Zeitpunkt mittags um 12:00 Uhr. Das Datum kann sowohl in der Vergangenheit wie auch in der Zukunft liegen.
-| 2030-12-31
+m| LinearpositionVon
+| todo
+| todo
+| öffentlich
+m| LinearpositionBis
+| todo
+| todo
+| öffentlich
+m| Sohlenbreite
+| todo
+| todo
+| öffentlich
+m| UferbreiteLinks
+| todo
+| todo
+| öffentlich
+m| UferbreiteRechts
+| todo
+| todo
+| öffentlich
+m| Erhebungsdatum
+| todo
+| todo
+| öffentlich
+m| hatVieleNatAbstuerze
+| todo
+| todo
 | öffentlich
 m| Bemerkung
 | öffentliche Bemerkung zum Objekt
 | Das ist eine öffentliche Bemerkung
 | öffentlich
-m| Bemerkung_intern
-| Erläuterung, welche den Katalogeintrag näher beschreibt
-| Dieser Status wird für alle Objekte verwendet, bei denen aktuell eine Nachführung läuft.
-| +++<span style="color:red;">amtsintern</span>+++
-4+| *Geometrie*
-m| Geometrie
-| Geometrie des Objektes
-| (ohne Beispiel)
+4+| *Beziehungsattribute*
+m| rBreitenvariabilitaet
+| Fremdschlüssel zum Katalog `+Breitenvariabilitaet+`, welcher mit dem Objekt verknüpft ist.
+| ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
 | öffentlich
+m| rTiefenvariabilitaet
+| Fremdschlüssel zum Katalog `+Tiefenvariabilitaet+`, welcher mit dem Objekt verknüpft ist.
+| ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
+| öffentlich
+m| rSohlenverbauung
+| Fremdschlüssel zum Katalog `+Sohlenverbauung+`, welcher mit dem Objekt verknüpft ist.
+| ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
+| öffentlich
+m| rSohlmaterial
+| Fremdschlüssel zum Katalog `+Sohlmaterial+`, welcher mit dem Objekt verknüpft ist.
+| ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
+| öffentlich
+m| rBoeschungsfussverbauLinks
+| Fremdschlüssel zum Katalog `+BoeschungsfussverbauLinks+`, welcher mit dem Objekt verknüpft ist.
+| ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
+| öffentlich
+m| rBoeschungsfussverbauRechts
+| Fremdschlüssel zum Katalog `+BoeschungsfussverbauRechts+`, welcher mit dem Objekt verknüpft ist.
+| ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
+| öffentlich
+m| rBoeschungsmaterialLinks
+| Fremdschlüssel zum Katalog `+BoeschungsmaterialLinks+`, welcher mit dem Objekt verknüpft ist.
+| ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
+| öffentlich
+m| rBoeschungsmaterialRechts
+| Fremdschlüssel zum Katalog `+BoeschungsmaterialRechts+`, welcher mit dem Objekt verknüpft ist.
+| ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
+| öffentlich
+m| rUferbeschaffenheitLinks
+| Fremdschlüssel zum Katalog `+UferbeschaffenheitLinks+`, welcher mit dem Objekt verknüpft ist.
+| ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
+| öffentlich
+m| rUferbeschaffenheitRechts
+| Fremdschlüssel zum Katalog `+UferbeschaffenheitRechts+`, welcher mit dem Objekt verknüpft ist.
+| ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
+| öffentlich
+m| rAlgenbewuchs
+| Fremdschlüssel zum Katalog `+Algenbewuchs+`, welcher mit dem Objekt verknüpft ist.
+| ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
+| öffentlich
+m| rMakrophytenbewuchs
+| Fremdschlüssel zum Katalog `+Makrophytenbewuchs+`, welcher mit dem Objekt verknüpft ist.
+| ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
+| öffentlich
+m| rTotholz
+| Fremdschlüssel zum Katalog `+Totholz+`, welcher mit dem Objekt verknüpft ist.
+| ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
+| öffentlich
+m| rKlasse
+| Fremdschlüssel zum Katalog `+Klasse+`, welcher mit dem Objekt verknüpft ist.
+| ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
+| öffentlich
+m| rUferbereichLinks
+| Fremdschlüssel zum Katalog `+UferbereichLinks+`, welcher mit dem Objekt verknüpft ist.
+| ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
+| öffentlich
+m| rUferbereichRechts
+| Fremdschlüssel zum Katalog `+UferbereichRechts+`, welcher mit dem Objekt verknüpft ist.
+| ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
+| öffentlich
+m| rUmlandnutzungLinks
+| Fremdschlüssel zum Katalog `+UmlandnutzungLinks+`, welcher mit dem Objekt verknüpft ist.
+| ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
+| öffentlich
+m| rUmlandnutzungRechts
+| Fremdschlüssel zum Katalog `+UmlandnutzungRechts+`, welcher mit dem Objekt verknüpft ist.
+| ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
+| öffentlich
+m| rGefaelle
+| Fremdschlüssel zum Katalog `+Gefaelle+`, welcher mit dem Objekt verknüpft ist.
+| ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
+| öffentlich
+m| rLaichsubstrat
+| Fremdschlüssel zum Katalog `+Laichsubstrat+`, welcher mit dem Objekt verknüpft ist.
+| ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
+| öffentlich
+4+| *Geometrie*
+4+| - - -
+4+| *Bedingungen*
+|`+Kennung+`
+3+a| * Der Wert von `+Kennung+` muss eindeutig sein.
+|`+LinearpositionBis+` und `+LinearpositionVon+`
+3+a| * Der Wert von `+LinearpositionBis+` muss grösser sein als jener von `+LinearpositionVon+`
 |===
 
-Variante mit Fremdschlüssel-, Geometrie- und Bedingungsattributen:
+==== Klasse `+Absturz+`
+Die Klasse `+Absturz+` führt die Informationen zu einem Absturz.
 
 [cols=4*,options="header"]
 |===
 | Name | Beschreibung | Beispiel | Freigabe
-4+| *Fachattribute*
 m| OID
 | technischer Objektidentifikator
 | ceaa37a9-8614-43fc-9a8b-688f95c30218
 | öffentlich
+m| Kennung
+| eindeutige Kennung des Absturzes
+| 1234
+| öffentlich
 m| erfasstVon
 | Loginname der Person, welche den Datensatz erstellt hat (Autor); wird durch das System gesetzt
 | Musterha
-| intern
+| +++<span style="color:red;">intern</span>+++
 m| erfasstAm
 | Datum und Zeit, an dem der Datensatz erstellt wurde; wird durch das System gesetzt
 | 1980-03-21T15:38:12
-| intern
+| öffentlich
 m| geaendertVon
 | Loginname der Person, welche den Datensatz zuletzt geändert hat (Editor); wird durch das System gesetzt
 | Muelleran
-| intern
+| +++<span style="color:red;">intern</span>+++
 m| geaendertAm
 | Datum und Zeit, an dem der Datensatz zuletzt geändert wurde; wird durch das System gesetzt
 | 2024-07-30T08:07:57
-| intern
-m| Kennung
-| fortlaufende, einfach aufgebaute Kennung, welche sich zur Identifikation eignet
-| GA1159
 | öffentlich
-m| KennungAlt
-| Nummer aus dem alten geologischen Archiv; entspricht "IDAlternate" aus DM_GeolAssets_V2
-| GA01.2.1461
+m| Achsgeometrie
+| todo
+| todo
 | öffentlich
-m| Titel
-| Titel des Dokuments; entspricht "IDAlternate" aus DM_GeolAssets_V2
-| UVP:GeolGeotecGutachtenzumVorprojekt
+m| Linearposition
+| todo
+| todo
 | öffentlich
-m| Erstelldatum
-| Datum des Berichtes; entspricht "DateCreation" aus DM_GeolAssets_V2
-| 1985-03-21
+m| Schutzbauten_ID
+| Verweis auf das Objekt im Thema "Schutzbauten Wasser (A127)"
+| todo
 | öffentlich
-m| Dokumentlink
-| Link, über den auf das Dokument zugegrifen werden kann; Pfad zum Speicher- bzw. Ablageort des Dokuments
-| Q:\...\2021-01-18-0303_NB_Standseilbahn_Stoos_Bauproj_KL.pdf
+m| Hoehe
+| todo
+| todo
 | öffentlich
-m| Baugesuchsnummer
-| Kennung des Baugesuches, welches mit dem Dokument in Verbindung steht
-| B2019-0421
+m| Erhebungsdatum
+| todo
+| todo
 | öffentlich
-m| Autor
-| Kennung der Objekt-ID des Unternehmens, welches den Bericht verfasst hat. Auf eine ausmodellierte Beziehung wird der Einfachheit halber verzichtet, so dass hier nur die ID eingetragen werden muss.
-| 2a150ef7-eb3d-4661-99d6-52d6eb7a5fd0
+m| Bemerkung_Nutzen
+| todo
+| todo
 | öffentlich
 m| Bemerkung
-| Kommentar zum entsprechenden Dokument; entspricht "Description" aus DM_GeolAssets_V2
-| Das ist meine Bemerkung zu diesem Dokument.
+| öffentliche Bemerkung zum Objekt
+| Das ist eine öffentliche Bemerkung
 | öffentlich
 4+| *Beziehungsattribute*
-m| rGeometrie
-| Fremdschlüssel zur Geometrie, welche mit dem Dokument verknüpft ist.
+m| rAbschnitt
+| Fremdschlüssel zur Klasse `+AbschOekomorph+`, auf welchem der Absturz liegt.
 | ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
 | öffentlich
-m| rInhalt
-| Fremdschlüssel zum Inhalt (Stammdaten); entspricht "Kind" aus DM_GeolAssets_V2
-| e0807260-956b-40a2-871a-e32c51ebf192 (für "Bohrprofil")
+m| rAbsturztyp
+| Fremdschlüssel zum Katalog `+Absturztyp+`, welcher mit dem Objekt verknüpft ist.
+| ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
+| öffentlich
+m| rAbsturzmaterial
+| Fremdschlüssel zum Katalog `+Absturzmaterial+`, welcher mit dem Objekt verknüpft ist.
+| ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
+| öffentlich
+m| rNutzen
+| Fremdschlüssel zum Katalog `+Nutzen+`, welcher mit dem Objekt verknüpft ist.
+| ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
 | öffentlich
 4+| *Geometrie*
-m| Geometrie
-| Geometrie des Objektes
-| (ohne Beispiel)
-| öffentlich
+4+| - - -
 4+| *Bedingungen*
-m|Kennung
-3+a| * Die Werte müssen innerhalb der Klasse eindeutig sein.
-* Nach der Vergabe muss der Wert unverändert bleiben.
+|`+Kennung+`
+3+a| * Der Wert von `+Kennung+` muss eindeutig sein.
 |===
 
-[%header, cols="10%, 10%, 10%, 60%, 10%", format=csv, separator=;]
-|=======
-include::../table/klasse_katalogeintrag.csv[]
-|=======
+==== Klasse `+Bauwerk+`
+Die Klasse `+Bauwerk+` führt die Informationen zu einem Bauwerk.
+
+[cols=4*,options="header"]
+|===
+| Name | Beschreibung | Beispiel | Freigabe
+m| OID
+| technischer Objektidentifikator
+| ceaa37a9-8614-43fc-9a8b-688f95c30218
+| öffentlich
+m| Kennung
+| eindeutige Kennung des Absturzes
+| 1234
+| öffentlich
+m| erfasstVon
+| Loginname der Person, welche den Datensatz erstellt hat (Autor); wird durch das System gesetzt
+| Musterha
+| +++<span style="color:red;">intern</span>+++
+m| erfasstAm
+| Datum und Zeit, an dem der Datensatz erstellt wurde; wird durch das System gesetzt
+| 1980-03-21T15:38:12
+| öffentlich
+m| geaendertVon
+| Loginname der Person, welche den Datensatz zuletzt geändert hat (Editor); wird durch das System gesetzt
+| Muelleran
+| +++<span style="color:red;">intern</span>+++
+m| geaendertAm
+| Datum und Zeit, an dem der Datensatz zuletzt geändert wurde; wird durch das System gesetzt
+| 2024-07-30T08:07:57
+| öffentlich
+m| Achsgeometrie
+| todo
+| todo
+| öffentlich
+m| Linearposition
+| todo
+| todo
+| öffentlich
+m| Schutzbauten_ID
+| Verweis auf das Objekt im Thema "Schutzbauten Wasser (A127)"
+| todo
+| öffentlich
+m| Querabstand
+| todo
+| todo
+| öffentlich
+m| Hoehe
+| todo
+| todo
+| öffentlich
+m| Erhebungsdatum
+| todo
+| todo
+| öffentlich
+m| Bemerkung
+| öffentliche Bemerkung zum Objekt
+| Das ist eine öffentliche Bemerkung
+| öffentlich
+4+| *Beziehungsattribute*
+m| rAbschnitt
+| Fremdschlüssel zur Klasse `+AbschOekomorph+`, auf welchem das Bauwerk liegt.
+| ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
+| öffentlich
+m| rBauwerktyp
+| Fremdschlüssel zum Katalog `+Bauwerktyp+`, welcher mit dem Objekt verknüpft ist.
+| ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
+| öffentlich
+4+| *Geometrie*
+4+| - - -
+4+| *Bedingungen*
+|`+Kennung+`
+3+a| * Der Wert von `+Kennung+` muss eindeutig sein.
+|===
 
 ifdef::backend-pdf[]
 <<<
