@@ -2,7 +2,7 @@
 === Ziel und Zweck
 Dieses Dokument beschreibt den Geobasisdatensatz
  
-* *Ökomorphologie der Fliessgewässer*
+* *Ökomorphologie der Fliessgewässer (A026)*
 
 Das Thema *Ökomorphologie der Fliessgewässer* ist Teil des Bundesmodells "Revitalisierung der Fliessgewässer" (ID 191). Neben der Ökomorphologie umfasst der Bundesdatensatz die Revitalisierungsplanung. Letzteres wird über einen Zeitraum von zwölf Jahren bestimmt und unterscheidet sich von der laufenden Nachführung der Ökomorphologiedaten. Aus diesem Grund wünschte die zuständige kantonale Stelle eine Trennung von den nachzuführenen Daten der Ökomorphologie und den langfristigen Daten der Revitalisierungsplanung. Dies führte zur Aufteilung in folgende kantonalen Themen:
 
