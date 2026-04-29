@@ -1,8 +1,8 @@
 = Dateibeschreibung
 
-Bei der Bewirtschaftung eines Themas gibt es Attribute, deren Werte nicht frei vergeben, sondern aus einer vorgegebenen Liste selektiert werden müssen. Dies gilt z.B. für den Gemeindenamen, welcher aus der Liste der Schwyzer Gemeinden auszuwählen ist. Bei den vorgegebenen Werten spricht man von Stammdaten. Sie werden in einer eigenen Datei gehalten (`+Stammdaten.xtf+`) und dienen als Grundlage für die Datenerfassung.
+Bei der Bewirtschaftung eines Themas gibt es Attribute, deren Werte nicht frei erfasst, sondern aus einem vorgegebenen Katalog selektiert werden müssen (z.B. Gemeindenamen aus dem Katalog der Schwyzer Gemeinden). Die Gesamtheit der Kataloge eines Themas wird als Stammdaten bezeichnet. Sie werden in einer eigenen Datei gehalten (`+Stammdaten.xtf+`) und bilden eine Voraussetzung für die Datenerfassung.
 
-Änderungen am Datenmodell und/oder Änderungen an den Werten der Stammdaten führen zu Anpassungen in der Datei `+Stammdaten.xtf+`. Die nachfolgende Tabelle zeigt, zu welchem Zeitpunkt welche Stammdaten für welches Datenmodell zu verwenden ist.
+Änderungen am Datenmodell und/oder Änderungen an den Stammdaten führen zu Anpassungen in der Datei `+Stammdaten.xtf+`. Die nachfolgende Tabelle zeigt, welche Stammdaten bei welchem Datenmodell zu verwenden sind.
 
 [cols="30%, 20%, 40%, 10%",options="header"]
 |===
