@@ -12,6 +12,9 @@ INTERLIS 2.3;
 !!      Version     | wer | was
 !! Datum      | Nr  |     |
 !!------------------------------------------------------------------------------
+!! 2024-07-24 | 1.1 | kep | Umsetzung neuer Anforderung: Bei Abstürzen und Buawerken sollen auf bestehende Objekte des Themas "Schutzbauten Naturgefahren (Prozessbereich Wasser) (A127)" verwiesen werden können.
+!!                            - neu: Absturz.Schutzbauten_ID
+!!                            - neu: Bauwerk.Schutzbauten_ID
 !! 2024-01-04 | 1.0 | kep | Erstfassung
 !!                          Modellgrundlagen
 !!                            - Stufe Kanton: "SZ_RevitalisierungGewaesser_V1_Erfassung"
@@ -24,9 +27,9 @@ INTERLIS 2.3;
 !!                            - Verzicht auf Modellimport "Units"
 !!                            - Standardattribute hinzugefügt
 !!==============================================================================
-MODEL SZ_Oekomorphologie_Fliessgewaesser_V1 (de)
+MODEL SZ_Oekomorphologie_Fliessgewaesser_V1_1 (de)
   AT "https://models.geo.sz.ch"
-  VERSION "2024-01-04" =
+  VERSION "2024-07-24" =
   IMPORTS UNQUALIFIED INTERLIS;
 
   DOMAIN
@@ -148,7 +151,7 @@ MODEL SZ_Oekomorphologie_Fliessgewaesser_V1 (de)
   END Stammdaten;
 !!------------------------------------------------------------------------------
   TOPIC Oekomorphologie =
-    DEPENDS ON SZ_Oekomorphologie_Fliessgewaesser_V1.Stammdaten;
+    DEPENDS ON SZ_Oekomorphologie_Fliessgewaesser_V1_1.Stammdaten;
 !!------------------------------------------------------------------------------
     CLASS AbschOekomorph =
       OID AS UUIDOID;
@@ -179,6 +182,7 @@ MODEL SZ_Oekomorphologie_Fliessgewaesser_V1 (de)
       geaendertAm       :  MANDATORY  XMLDateTime;
       Achsgeometrie     :  MANDATORY  TEXT*8;
       Linearposition    :  MANDATORY  0.0 .. 999999.9;
+      Schutzbauten_ID   :             TEXT*25;          !! Verweis auf Objekt im Thema "Schutzbauten Wasser (A127)" 
       Hoehe             :  MANDATORY  0 .. 30000;
       Erhebungsdatum    :             XMLDate;
       Bemerkung_Nutzen  :             MTEXT*1000;
@@ -188,17 +192,18 @@ MODEL SZ_Oekomorphologie_Fliessgewaesser_V1 (de)
 
     CLASS Bauwerk  =
       OID AS UUIDOID;
-      Kennung         :  MANDATORY  TEXT*10;
-      erfasstVon      :  MANDATORY  TEXT*100;
-      erfasstAm       :  MANDATORY  XMLDateTime;
-      geaendertVon    :  MANDATORY  TEXT*100;
-      geaendertAm     :  MANDATORY  XMLDateTime;
-      Achsgeometrie   :  MANDATORY  TEXT*8;
-      Linearposition  :  MANDATORY  0.0 .. 999999.9;
-      Querabstand     :            -99.9  ..  99.9;
-      Hoehe           :  MANDATORY  0 .. 30000;
-      Erhebungsdatum  :             XMLDate;
-      Bemerkung       :             MTEXT*1000;
+      Kennung          :  MANDATORY  TEXT*10;
+      erfasstVon       :  MANDATORY  TEXT*100;
+      erfasstAm        :  MANDATORY  XMLDateTime;
+      geaendertVon     :  MANDATORY  TEXT*100;
+      geaendertAm      :  MANDATORY  XMLDateTime;
+      Achsgeometrie    :  MANDATORY  TEXT*8;
+      Linearposition   :  MANDATORY  0.0 .. 999999.9;
+      Schutzbauten_ID  :             TEXT*25;          !! Verweis auf Objekt im Thema "Schutzbauten Wasser (A127)" 
+      Querabstand      :            -99.9  ..  99.9;
+      Hoehe            :  MANDATORY  0 .. 30000;
+      Erhebungsdatum   :             XMLDate;
+      Bemerkung        :             MTEXT*1000;
       UNIQUE Kennung;
     END Bauwerk;
 
@@ -215,126 +220,126 @@ MODEL SZ_Oekomorphologie_Fliessgewaesser_V1 (de)
     !! Beziehungen zu den Stammdaten für die Klasse AbschOekomorph
     !! -----------------------------------------------------------
     ASSOCIATION Breitenvariabilitaet__AbschOekomorph =
-      rBreitenvariabilitaet (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1.Stammdaten.Breitenvariabilitaet;
+      rBreitenvariabilitaet (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1_1.Stammdaten.Breitenvariabilitaet;
       rAbschOekomorph                   --  {0..*}  AbschOekomorph;
     END Breitenvariabilitaet__AbschOekomorph;
 
     ASSOCIATION Tiefenvariabilitaet__AbschOekomorph =
-      rTiefenvariabilitaet (EXTERNAL)  --  {0..1}  SZ_Oekomorphologie_Fliessgewaesser_V1.Stammdaten.Tiefenvariabilitaet;
+      rTiefenvariabilitaet (EXTERNAL)  --  {0..1}  SZ_Oekomorphologie_Fliessgewaesser_V1_1.Stammdaten.Tiefenvariabilitaet;
       rAbschOekomorph                  --  {0..*}  AbschOekomorph;
     END Tiefenvariabilitaet__AbschOekomorph;
 
     ASSOCIATION Sohlenverbauung__AbschOekomorph =
-      rSohlenverbauung (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1.Stammdaten.Sohlenverbauung;
+      rSohlenverbauung (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1_1.Stammdaten.Sohlenverbauung;
       rAbschOekomorph              --  {0..*}  AbschOekomorph;
     END Sohlenverbauung__AbschOekomorph;
 
     ASSOCIATION Sohlmaterial__AbschOekomorph =
-      rSohlmaterial (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1.Stammdaten.Sohlmaterial;
+      rSohlmaterial (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1_1.Stammdaten.Sohlmaterial;
       rAbschOekomorph           --  {0..*}  AbschOekomorph;
     END Sohlmaterial__AbschOekomorph;
 
     ASSOCIATION BoeschungsfussverbauLinks__AbschOekomorph =
-      rBoeschungsfussverbauLinks (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1.Stammdaten.Boeschungsfussverbau;
+      rBoeschungsfussverbauLinks (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1_1.Stammdaten.Boeschungsfussverbau;
       rAbschOekomorph                        --  {0..*}  AbschOekomorph;
     END BoeschungsfussverbauLinks__AbschOekomorph;
 
     ASSOCIATION BoeschungsfussverbauRechts__AbschOekomorph =
-      rBoeschungsfussverbauRechts (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1.Stammdaten.Boeschungsfussverbau;
+      rBoeschungsfussverbauRechts (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1_1.Stammdaten.Boeschungsfussverbau;
       rAbschOekomorph                         --  {0..*}  AbschOekomorph;
     END BoeschungsfussverbauRechts__AbschOekomorph;
 
     ASSOCIATION BoeschungsmaterialLinks__AbschOekomorph =
-      rBoeschungsmaterialLinks (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1.Stammdaten.Boeschungsmaterial;
+      rBoeschungsmaterialLinks (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1_1.Stammdaten.Boeschungsmaterial;
       rAbschOekomorph                      --  {0..*}  AbschOekomorph;
     END BoeschungsmaterialLinks__AbschOekomorph;
 
     ASSOCIATION BoeschungsmaterialRechts__AbschOekomorph =
-      rBoeschungsmaterialRechts (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1.Stammdaten.Boeschungsmaterial;
+      rBoeschungsmaterialRechts (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1_1.Stammdaten.Boeschungsmaterial;
       rAbschOekomorph                       --  {0..*}  AbschOekomorph;
     END BoeschungsmaterialRechts__AbschOekomorph;
 
     ASSOCIATION UferbeschaffenheitLinks__AbschOekomorph =
-      rUferbeschaffenheitLinks (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1.Stammdaten.Uferbeschaffenheit;
+      rUferbeschaffenheitLinks (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1_1.Stammdaten.Uferbeschaffenheit;
       rAbschOekomorph                      --  {0..*}  AbschOekomorph;
     END UferbeschaffenheitLinks__AbschOekomorph;
 
     ASSOCIATION UferbeschaffenheitRechts__AbschOekomorph =
-      rUferbeschaffenheitRechts (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1.Stammdaten.Uferbeschaffenheit;
+      rUferbeschaffenheitRechts (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1_1.Stammdaten.Uferbeschaffenheit;
       rAbschOekomorph                       --  {0..*}  AbschOekomorph;
     END UferbeschaffenheitRechts__AbschOekomorph;
 
     ASSOCIATION Algenbewuchs__AbschOekomorph =
-      rAlgenbewuchs (EXTERNAL)  --  {0..1}  SZ_Oekomorphologie_Fliessgewaesser_V1.Stammdaten.Bewuchs;
+      rAlgenbewuchs (EXTERNAL)  --  {0..1}  SZ_Oekomorphologie_Fliessgewaesser_V1_1.Stammdaten.Bewuchs;
       rAbschOekomorph           --  {0..*}  AbschOekomorph;
     END Algenbewuchs__AbschOekomorph;
 
     ASSOCIATION Makrophytenbewuchs__AbschOekomorph =
-      rMakrophytenbewuchs (EXTERNAL)  --  {0..1}  SZ_Oekomorphologie_Fliessgewaesser_V1.Stammdaten.Bewuchs;
+      rMakrophytenbewuchs (EXTERNAL)  --  {0..1}  SZ_Oekomorphologie_Fliessgewaesser_V1_1.Stammdaten.Bewuchs;
       rAbschOekomorph                 --  {0..*}  AbschOekomorph;
     END Makrophytenbewuchs__AbschOekomorph;
 
     ASSOCIATION Totholz__AbschOekomorph =
-      rTotholz (EXTERNAL)  --  {0..1}  SZ_Oekomorphologie_Fliessgewaesser_V1.Stammdaten.Totholz;
+      rTotholz (EXTERNAL)  --  {0..1}  SZ_Oekomorphologie_Fliessgewaesser_V1_1.Stammdaten.Totholz;
       rAbschOekomorph      --  {0..*}  AbschOekomorph;
     END Totholz__AbschOekomorph;
 
     ASSOCIATION Klasse__AbschOekomorph =
-      rKlasse (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1.Stammdaten.Klasse;
+      rKlasse (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1_1.Stammdaten.Klasse;
       rAbschOekomorph     --  {0..*}  AbschOekomorph;
     END Klasse__AbschOekomorph;
 
     ASSOCIATION UferbereichLinks__AbschOekomorph =
-      rUferbereichLinks (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1.Stammdaten.Uferbereich;
+      rUferbereichLinks (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1_1.Stammdaten.Uferbereich;
       rAbschOekomorph               --  {0..*}  AbschOekomorph;
     END UferbereichLinks__AbschOekomorph;
 
     ASSOCIATION UferbereichRechts__AbschOekomorph =
-      rUferbereichRechts (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1.Stammdaten.Uferbereich;
+      rUferbereichRechts (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1_1.Stammdaten.Uferbereich;
       rAbschOekomorph                --  {0..*}  AbschOekomorph;
     END UferbereichRechts__AbschOekomorph;
 
     ASSOCIATION UmlandnutzungLinks__AbschOekomorph =
-      rUmlandnutzungLinks (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1.Stammdaten.Umlandnutzung;
+      rUmlandnutzungLinks (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1_1.Stammdaten.Umlandnutzung;
       rAbschOekomorph                 --  {0..*}  AbschOekomorph;
     END UmlandnutzungLinks__AbschOekomorph;
 
     ASSOCIATION UmlandnutzungRechts__AbschOekomorph =
-      rUmlandnutzungRechts (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1.Stammdaten.Umlandnutzung;
+      rUmlandnutzungRechts (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1_1.Stammdaten.Umlandnutzung;
       rAbschOekomorph                  --  {0..*}  AbschOekomorph;
     END UmlandnutzungRechts__AbschOekomorph;
 
     ASSOCIATION Gefaelle__AbschOekomorph =
-      rGefaelle (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1.Stammdaten.Gefaelle;
+      rGefaelle (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1_1.Stammdaten.Gefaelle;
       rAbschOekomorph       --  {0..*}  AbschOekomorph;
     END Gefaelle__AbschOekomorph;
 
     ASSOCIATION Laichsubstrat__AbschOekomorph =
-      rLaichsubstrat (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1.Stammdaten.Laichsubstrat;
+      rLaichsubstrat (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1_1.Stammdaten.Laichsubstrat;
       rAbschOekomorph            --  {0..*}  AbschOekomorph;
     END Laichsubstrat__AbschOekomorph;
 
     !! Beziehungen zu den Stammdaten für die Klasse Absturz
     !! ----------------------------------------------------
     ASSOCIATION Absturztyp__Absturz =
-      rAbsturztyp (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1.Stammdaten.Absturztyp;
+      rAbsturztyp (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1_1.Stammdaten.Absturztyp;
       rAbsturz                --  {0..*}  Absturz;
     END Absturztyp__Absturz;
 
     ASSOCIATION Absturzmaterial__Absturz =
-      rAbsturzmaterial (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1.Stammdaten.Absturzmaterial;
+      rAbsturzmaterial (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1_1.Stammdaten.Absturzmaterial;
       rAbsturz                     --  {0..*}  Absturz;
     END Absturzmaterial__Absturz;
 
     ASSOCIATION Nutzen__Absturz =
-      rNutzen (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1.Stammdaten.Nutzen;
+      rNutzen (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1_1.Stammdaten.Nutzen;
       rAbsturz            --  {0..*}  Absturz;
     END Nutzen__Absturz;
 
     !! Beziehungen zu den Stammdaten für die Klasse Bauwerk
     !! ----------------------------------------------------
     ASSOCIATION Bauwerktyp__Bauwerk =
-      rBauwerktyp (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1.Stammdaten.Bauwerktyp;
+      rBauwerktyp (EXTERNAL)  --  {1}     SZ_Oekomorphologie_Fliessgewaesser_V1_1.Stammdaten.Bauwerktyp;
       rAbsturzNutzen          --  {0..*}  Bauwerk;
     END Bauwerktyp__Bauwerk;
 
@@ -360,4 +365,4 @@ MODEL SZ_Oekomorphologie_Fliessgewaesser_V1 (de)
 
   END Metadaten;
 
-END SZ_Oekomorphologie_Fliessgewaesser_V1.
+END SZ_Oekomorphologie_Fliessgewaesser_V1_1.
