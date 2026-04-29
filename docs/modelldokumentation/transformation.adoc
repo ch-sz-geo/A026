@@ -87,8 +87,18 @@ hergeleitet über `+Absturzmaterial__Absturz.rAbsturzmaterial+` | `+Material+`
 | Quellattribut | Zielattribut
 | Punktgeometrie, gebildet über die lineare Referenzierung auf der Grundlage von `+Achsgeometrie+` sowie `+Linearposition+` und `+Querabstand+` | `+Ort+`
 | `+Schutzbauten_ID+` | `+Identifikator+`
-| Wert von `+Bauwerktyp.OID+` +
-hergeleitet über `+Bauwerktyp__Bauwerk.rBauwerktyp+` | `+Typ+`
+a| Wert von `+Bauwerktyp.OID+` +
+hergeleitet über `+Bauwerktyp__Bauwerk.rBauwerktyp+` +
+Regel +
+Die Werte von
+
+- `+andere_nicht_kartierter_Zufluss+`,
+- `+andere_Einleitung+`,
+- `+andere_Ablagerung+` und
+- `+andere+`
+
+sind dem Bundestyp `+Bauwerkstyp1+` ("nicht bestimmt") zuzuordnen.
+| `+Typ+`
 | `+Hoehe+` | `+Hoehe+`
 | `+Bemerkung+` | `+Notizen+`
 |===
