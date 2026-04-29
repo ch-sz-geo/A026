@@ -324,36 +324,36 @@ m| geaendertAm
 | 2024-07-30T08:07:57
 | öffentlich
 m| Achsgeometrie
-| todo
-| todo
+| Objektidentifikator der Achsgeometrie im Referenzdatensatz Fliessgewässer (A041)
+| ceaa37a9-8614-43fc-9a8b-688f95c30218
 | öffentlich
 m| LinearpositionVon
-| todo
-| todo
+| Wert der linearen Position entlang der Referenzgeometrie, an welcher der Abschnitt beginnt.
+| 1234.5
 | öffentlich
 m| LinearpositionBis
-| todo
-| todo
+| Wert der linearen Position entlang der Referenzgeometrie, an welcher der Abschnitt endet.
+| 2112.8
 | öffentlich
 m| Sohlenbreite
-| todo
-| todo
+| Breite der Sohle in Meter
+| 2.4
 | öffentlich
 m| UferbreiteLinks
-| todo
-| todo
+| Breite des Ufers auf der linken Seite
+| 11.1
 | öffentlich
 m| UferbreiteRechts
-| todo
-| todo
+| Breite des Ufers auf der rechten Seite
+| 22.2
 | öffentlich
 m| Erhebungsdatum
-| todo
-| todo
+| Datum, an dem die Datenerhebung erfolgte.
+| 2015-06-15
 | öffentlich
 m| hatVieleNatAbstuerze
-| todo
-| todo
+| Angabe, ob der Abschnitt viele natürliche Abstürze aufweist
+| nein
 | öffentlich
 m| Bemerkung
 | öffentliche Bemerkung zum Objekt
@@ -480,28 +480,28 @@ m| geaendertAm
 | 2024-07-30T08:07:57
 | öffentlich
 m| Achsgeometrie
-| todo
-| todo
+| Objektidentifikator der Achsgeometrie im Referenzdatensatz Fliessgewässer (A041)
+| ceaa37a9-8614-43fc-9a8b-688f95c30218
 | öffentlich
 m| Linearposition
-| todo
-| todo
+| Wert der linearen Position entlang der Referenzgeometrie, an welcher das Objekt liegt.
+| 1234.5
 | öffentlich
 m| Schutzbauten_ID
-| Verweis auf das Objekt im Thema "Schutzbauten Wasser (A127)"
-| todo
+| Objektidentifikator des betreffenden Objektes im Thema "Schutzbauten Wasser (A127)"
+| ceaa37a9-8614-43fc-9a8b-688f95c30218
 | öffentlich
 m| Hoehe
-| todo
-| todo
+| Absturzhöhe in Zentimeter
+| 1.2
 | öffentlich
 m| Erhebungsdatum
-| todo
-| todo
+| Datum, an dem die Datenerhebung erfolgte.
+| 2015-06-15
 | öffentlich
 m| Bemerkung_Nutzen
-| todo
-| todo
+| Bemerkung zur ökologischen und landschaftlichen Bedeutung
+| Das ist eine Bemerkung zum Nutzen
 | öffentlich
 m| Bemerkung
 | öffentliche Bemerkung zum Objekt
@@ -562,28 +562,28 @@ m| geaendertAm
 | 2024-07-30T08:07:57
 | öffentlich
 m| Achsgeometrie
-| todo
-| todo
+| Objektidentifikator der Achsgeometrie im Referenzdatensatz Fliessgewässer (A041)
+| ceaa37a9-8614-43fc-9a8b-688f95c30218
 | öffentlich
 m| Linearposition
-| todo
-| todo
+| Wert der linearen Position entlang der Referenzgeometrie, an welcher das Objekt liegt.
+| 1234.5
 | öffentlich
 m| Schutzbauten_ID
-| Verweis auf das Objekt im Thema "Schutzbauten Wasser (A127)"
-| todo
+| Objektidentifikator des betreffenden Objektes im Thema "Schutzbauten Wasser (A127)"
+| ceaa37a9-8614-43fc-9a8b-688f95c30218
 | öffentlich
 m| Querabstand
-| todo
-| todo
+| Ort des Bauwerks, ausgedrückt durch die rechtwinklige Distanz in Meter zur Referenzgeometrie an der Stelle `+Linearposition+'. Liegt ein Objekt in Bezug zur Digitalisierungsrichtung auf der linken Seite der Achsgeometrie, erhält es einen negativen Wert; anderfalls ist der Wert positiv.
+| 12.9
 | öffentlich
 m| Hoehe
-| todo
-| todo
+| Bauwerkshöhe in Zentimeter
+| 3.7
 | öffentlich
 m| Erhebungsdatum
-| todo
-| todo
+| Datum, an dem die Datenerhebung erfolgte.
+| 2015-06-15
 | öffentlich
 m| Bemerkung
 | öffentliche Bemerkung zum Objekt
