@@ -271,7 +271,13 @@ m|Name
 |===
 
 ==== Klasse `+Bauwerktyp+`
-Die Klasse `+Bauwerktyp+` führt die Werte des Katalogs "Bauwerktyp". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+Die Klasse `+Bauwerktyp+` führt die Werte des Katalogs "Bauwerktyp". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`. +
+Der Bundeskatalog wird auf Stufe Kanton um folgende Werte erweitert:
+
+- andere (Einleitung)
+- andere (Ablagerung)
+- andere (nicht kartierter Zufluss)
+- andere
 
 [cols=4*,options="header"]
 |===
