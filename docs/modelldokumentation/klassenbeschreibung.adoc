@@ -611,7 +611,7 @@ Das Topic `+Metadaten+` umfasst eine Klasse, welche Informationen zu den Fachdat
 ==== Klasse `+Bearbeitung+`
 Die Klasse `+Bearbeitung+` enthält Metadaten über den Fachdatensatz. Eine wichtige Information ist die Angabe des Referenzdatensatzes, auf welchem die Daten erhoben wurden. Die Fachdaten können nur über diesen Referenzdatensatz räumlich korrekt dargestellt werden.
 
-Auf der Klasse `+Bearbeitung+` darf nur ein einziger Eintrag stehen. Dies deshalb, weil die Revitalisierungsplanung sich auf genau einen Fliessgewässerreferenzstand bezieht und nur genau ein letztes Nachführungsdatum (`+Stand+`) aufweisen kann. Dieser eine Eintrag wird über das Singleton-Pattern erzwungen (siehe die Definition der Beziehung der Klasse `+Bearbeitung+`).
+Auf der Klasse `+Bearbeitung+` darf nur ein einziger Eintrag stehen. Dies deshalb, weil die Ökomorphologie sich auf genau einen Fliessgewässerreferenzstand bezieht und nur genau ein letztes Nachführungsdatum (`+Stand+`) aufweisen kann. Dieser eine Eintrag wird über das Singleton-Pattern erzwungen (siehe die Definition der Beziehung der Klasse `+Bearbeitung+`).
 
 [cols=4*,options="header"]
 |===
