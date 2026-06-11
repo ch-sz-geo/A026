@@ -256,20 +256,6 @@ m|Name
 3+| Die Werte müssen eindeutig sein
 |===
 
-==== Klasse `+Nutzen+`
-Die Klasse `+Nutzen+` führt die Werte des Katalogs "Nutzen". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
-
-[cols=4*,options="header"]
-|===
-| Name | Beschreibung | Beispiel | Freigabe
-4+| _Diese Klasse führt keine zusätzlichen Attribute_
-4+| *Anforderungen*
-m|Code
-3+| Die Werte müssen eindeutig sein
-m|Name
-3+| Die Werte müssen eindeutig sein
-|===
-
 ==== Klasse `+Bauwerktyp+`
 Die Klasse `+Bauwerktyp+` führt die Werte des Katalogs "Bauwerktyp". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`. +
 Der Bundeskatalog wird auf Stufe Kanton um folgende Werte erweitert:
@@ -499,10 +485,6 @@ m| Erhebungsdatum
 | Datum, an dem die Datenerhebung erfolgte.
 | 2015-06-15
 | öffentlich
-m| Bemerkung_Nutzen
-| Bemerkung zur ökologischen und landschaftlichen Bedeutung
-| Das ist eine Bemerkung zum Nutzen
-| öffentlich
 m| Bemerkung
 | öffentliche Bemerkung zum Objekt
 | Das ist eine öffentliche Bemerkung
@@ -518,10 +500,6 @@ m| rAbsturztyp
 | öffentlich
 m| rAbsturzmaterial
 | Fremdschlüssel zum Katalog `+Absturzmaterial+`, welcher mit dem Objekt verknüpft ist.
-| ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
-| öffentlich
-m| rNutzen
-| Fremdschlüssel zum Katalog `+Nutzen+`, welcher mit dem Objekt verknüpft ist.
 | ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
 | öffentlich
 4+| *Geometrie*
