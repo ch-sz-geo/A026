@@ -32,8 +32,8 @@ m| Bemerkung
 | öffentlich
 |===
 
-==== Klasse `+Breitenvariabilitaet+`
-Die Klasse `+Breitenvariabilitaet+` führt die Werte des Katalogs "Breitenvariabilitaet". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+==== Klasse `+Absturzmaterial+`
+Die Klasse `+Absturzmaterial+` führt die Werte des Katalogs "Absturzmaterial". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
 
 [cols=4*,options="header"]
 |===
@@ -46,8 +46,8 @@ m|Name
 3+| Die Werte müssen eindeutig sein
 |===
 
-==== Klasse `+Tiefenvariabilitaet+`
-Die Klasse `+Tiefenvariabilitaet+` führt die Werte des Katalogs "Tiefenvariabilitaet". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+==== Klasse `+Absturztyp+`
+Die Klasse `+Absturztyp+` führt die Werte des Katalogs "Absturztyp". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
 
 [cols=4*,options="header"]
 |===
@@ -60,8 +60,14 @@ m|Name
 3+| Die Werte müssen eindeutig sein
 |===
 
-==== Klasse `+Sohlenverbauung+`
-Die Klasse `+Sohlenverbauung+` führt die Werte des Katalogs "Sohlenverbauung". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+==== Klasse `+Bauwerktyp+`
+Die Klasse `+Bauwerktyp+` führt die Werte des Katalogs "Bauwerktyp". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`. +
+Der Bundeskatalog wird auf Stufe Kanton um folgende Werte erweitert:
+
+- andere (Einleitung)
+- andere (Ablagerung)
+- andere (nicht kartierter Zufluss)
+- andere
 
 [cols=4*,options="header"]
 |===
@@ -74,8 +80,8 @@ m|Name
 3+| Die Werte müssen eindeutig sein
 |===
 
-==== Klasse `+Sohlmaterial+`
-Die Klasse `+Sohlmaterial+` führt die Werte des Katalogs "Sohlmaterial". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+==== Klasse `+Bewuchs+`
+Die Klasse `+Bewuchs+` führt die Werte des Katalogs "Bewuchs". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
 
 [cols=4*,options="header"]
 |===
@@ -116,8 +122,8 @@ m|Name
 3+| Die Werte müssen eindeutig sein
 |===
 
-==== Klasse `+Uferbeschaffenheit+`
-Die Klasse `+Uferbeschaffenheit+` führt die Werte des Katalogs "Uferbeschaffenheit". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+==== Klasse `+Breitenvariabilitaet+`
+Die Klasse `+Breitenvariabilitaet+` führt die Werte des Katalogs "Breitenvariabilitaet". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
 
 [cols=4*,options="header"]
 |===
@@ -130,22 +136,8 @@ m|Name
 3+| Die Werte müssen eindeutig sein
 |===
 
-==== Klasse `+Bewuchs+`
-Die Klasse `+Bewuchs+` führt die Werte des Katalogs "Bewuchs". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
-
-[cols=4*,options="header"]
-|===
-| Name | Beschreibung | Beispiel | Freigabe
-4+| _Diese Klasse führt keine zusätzlichen Attribute_
-4+| *Anforderungen*
-m|Code
-3+| Die Werte müssen eindeutig sein
-m|Name
-3+| Die Werte müssen eindeutig sein
-|===
-
-==== Klasse `+Totholz+`
-Die Klasse `+Totholz+` führt die Werte des Katalogs "Totholz". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+==== Klasse `+Gefaelle+`
+Die Klasse `+Gefaelle+` führt die Werte des Katalogs "Gefaelle". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+` und eine kantonale Erweiterung.
 
 [cols=4*,options="header"]
 |===
@@ -172,8 +164,92 @@ m|Name
 3+| Die Werte müssen eindeutig sein
 |===
 
+==== Klasse `+Laichsubstrat+`
+Die Klasse `+Laichsubstrat+` führt die Werte des Katalogs "Laichsubstrat". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+` und eine kantonale Erweiterung.
+
+[cols=4*,options="header"]
+|===
+| Name | Beschreibung | Beispiel | Freigabe
+4+| _Diese Klasse führt keine zusätzlichen Attribute_
+4+| *Anforderungen*
+m|Code
+3+| Die Werte müssen eindeutig sein
+m|Name
+3+| Die Werte müssen eindeutig sein
+|===
+
+==== Klasse `+Sohlmaterial+`
+Die Klasse `+Sohlmaterial+` führt die Werte des Katalogs "Sohlmaterial". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+
+[cols=4*,options="header"]
+|===
+| Name | Beschreibung | Beispiel | Freigabe
+4+| _Diese Klasse führt keine zusätzlichen Attribute_
+4+| *Anforderungen*
+m|Code
+3+| Die Werte müssen eindeutig sein
+m|Name
+3+| Die Werte müssen eindeutig sein
+|===
+
+==== Klasse `+Sohlenverbauung+`
+Die Klasse `+Sohlenverbauung+` führt die Werte des Katalogs "Sohlenverbauung". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+
+[cols=4*,options="header"]
+|===
+| Name | Beschreibung | Beispiel | Freigabe
+4+| _Diese Klasse führt keine zusätzlichen Attribute_
+4+| *Anforderungen*
+m|Code
+3+| Die Werte müssen eindeutig sein
+m|Name
+3+| Die Werte müssen eindeutig sein
+|===
+
+==== Klasse `+Tiefenvariabilitaet+`
+Die Klasse `+Tiefenvariabilitaet+` führt die Werte des Katalogs "Tiefenvariabilitaet". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+
+[cols=4*,options="header"]
+|===
+| Name | Beschreibung | Beispiel | Freigabe
+4+| _Diese Klasse führt keine zusätzlichen Attribute_
+4+| *Anforderungen*
+m|Code
+3+| Die Werte müssen eindeutig sein
+m|Name
+3+| Die Werte müssen eindeutig sein
+|===
+
+==== Klasse `+Totholz+`
+Die Klasse `+Totholz+` führt die Werte des Katalogs "Totholz". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+
+[cols=4*,options="header"]
+|===
+| Name | Beschreibung | Beispiel | Freigabe
+4+| _Diese Klasse führt keine zusätzlichen Attribute_
+4+| *Anforderungen*
+m|Code
+3+| Die Werte müssen eindeutig sein
+m|Name
+3+| Die Werte müssen eindeutig sein
+|===
+
 ==== Klasse `+Uferbereich+`
-Die Klasse `+Uferbereich+` führt die Werte des Katalogs "Uferbereich". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
+Die Klasse `+Uferbereich+` führt die Werte des Katalogs "Uferbereich". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+` und eine kantonale Erweiterung.
+
+[cols=4*,options="header"]
+|===
+| Name | Beschreibung | Beispiel | Freigabe
+4+| _Diese Klasse führt keine zusätzlichen Attribute_
+4+| *Anforderungen*
+m|Code
+3+| Die Werte müssen eindeutig sein
+m|Name
+3+| Die Werte müssen eindeutig sein
+|===
+
+==== Klasse `+Uferbeschaffenheit+`
+Die Klasse `+Uferbeschaffenheit+` führt die Werte des Katalogs "Uferbeschaffenheit". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
 
 [cols=4*,options="header"]
 |===
@@ -187,83 +263,7 @@ m|Name
 |===
 
 ==== Klasse `+Umlandnutzung+`
-Die Klasse `+Umlandnutzung+` führt die Werte des Katalogs "Umlandnutzung". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
-
-[cols=4*,options="header"]
-|===
-| Name | Beschreibung | Beispiel | Freigabe
-4+| _Diese Klasse führt keine zusätzlichen Attribute_
-4+| *Anforderungen*
-m|Code
-3+| Die Werte müssen eindeutig sein
-m|Name
-3+| Die Werte müssen eindeutig sein
-|===
-
-==== Klasse `+Gefaelle+`
-Die Klasse `+Gefaelle+` führt die Werte des Katalogs "Gefaelle". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
-
-[cols=4*,options="header"]
-|===
-| Name | Beschreibung | Beispiel | Freigabe
-4+| _Diese Klasse führt keine zusätzlichen Attribute_
-4+| *Anforderungen*
-m|Code
-3+| Die Werte müssen eindeutig sein
-m|Name
-3+| Die Werte müssen eindeutig sein
-|===
-
-==== Klasse `+Laichsubstrat+`
-Die Klasse `+Laichsubstrat+` führt die Werte des Katalogs "Laichsubstrat". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
-
-[cols=4*,options="header"]
-|===
-| Name | Beschreibung | Beispiel | Freigabe
-4+| _Diese Klasse führt keine zusätzlichen Attribute_
-4+| *Anforderungen*
-m|Code
-3+| Die Werte müssen eindeutig sein
-m|Name
-3+| Die Werte müssen eindeutig sein
-|===
-
-==== Klasse `+Absturztyp+`
-Die Klasse `+Absturztyp+` führt die Werte des Katalogs "Absturztyp". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
-
-[cols=4*,options="header"]
-|===
-| Name | Beschreibung | Beispiel | Freigabe
-4+| _Diese Klasse führt keine zusätzlichen Attribute_
-4+| *Anforderungen*
-m|Code
-3+| Die Werte müssen eindeutig sein
-m|Name
-3+| Die Werte müssen eindeutig sein
-|===
-
-==== Klasse `+Absturzmaterial+`
-Die Klasse `+Absturzmaterial+` führt die Werte des Katalogs "Absturzmaterial". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`.
-
-[cols=4*,options="header"]
-|===
-| Name | Beschreibung | Beispiel | Freigabe
-4+| _Diese Klasse führt keine zusätzlichen Attribute_
-4+| *Anforderungen*
-m|Code
-3+| Die Werte müssen eindeutig sein
-m|Name
-3+| Die Werte müssen eindeutig sein
-|===
-
-==== Klasse `+Bauwerktyp+`
-Die Klasse `+Bauwerktyp+` führt die Werte des Katalogs "Bauwerktyp". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+`. +
-Der Bundeskatalog wird auf Stufe Kanton um folgende Werte erweitert:
-
-- andere (Einleitung)
-- andere (Ablagerung)
-- andere (nicht kartierter Zufluss)
-- andere
+Die Klasse `+Umlandnutzung+` führt die Werte des Katalogs "Umlandnutzung". Sie ist eine Spezialisierung der Klasse `+Katalogeintrag+` und eine kantonale Erweiterung.
 
 [cols=4*,options="header"]
 |===
