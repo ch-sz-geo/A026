@@ -1,125 +1,115 @@
 == Modelltransformationen
-=== Transformation vom Bearbeitungsmodell ins Publikationsmodell
-* Quellmodell: https://raw.githubusercontent.com/ch-sz-geo/A064/refs/heads/main/models/SZ_Schutzwald_V1_Bearbeitung.ili[Bearbeitungsmodell "SZ_Schutzwald_V1" (Version: 2025-01-23)]
-* Zielmodell: https://raw.githubusercontent.com/ch-sz-geo/A064/refs/heads/main/models/SZ_Schutzwald_V1.ili[Publikationsmodell verwaltungsintern "SZ_Schutzwald_V1_Bearbeitung" (Version: 2025-01-23)]
-
 === Transformation ins minimale Geodatenmodell des Bundes
 * Quellmodell: Das hier beschriebene Datenmodell
-* Zielmodell: http://models.geo.admin.ch/BAFU/todo[<Modellname> (Version: 2023-03-20)]
+* Zielmodell: https://models.geo.admin.ch/BAFU/Revitalisierung_Fliessgewaesser_V1_2.ili[Revitalisierung_Fliessgewaesser_V1_2 (Version: 2024-06-13)]
 
-=== Transformation ins Transfermodell ÖREB-Kataster
-* Quellmodell: Das hier beschriebene Datenmodell
-* Zielmodell: https://models.geo.admin.ch/V_D/OeREB/OeREBKRMtrsfr_V2_0.ili[OeREBKRMtrsfr_V2_0 (Version: 2021-04-14)]
-
-==== Klasse `+DarstellungsDienst+`
+==== Klasse `+AbschOekomorph+`
 [cols=2*,options="header"]
 |===
 | Quellattribut | Zielattribut
-| `+ch.sz.a094b.oereb.wald.statische_waldgrenze.linie+`
-| `+VerweisWMS+`
+| Liniengeometrie, gebildet über die lineare Referenzierung auf der Grundlage von `+Achsgeometrie+` sowie `+LinearpositionVon+` und `+LinearpositionBis+`
+| `+Abschnitt+`
+| `+Sohlenbreite+`
+| `+Sohlenbreite+`
+| - - -
+| `+Eindolung+`
+| Wert von `+Breitenvariabilitaet.OID+` +
+hergeleitet über `+Breitenvariabilitaet__AbschOekomorph.rBreitenvariabilitaet+`
+| `+Breitenvariabilitaet+`
+| Wert von `+Tiefenvariabilitaet.OID+` +
+hergeleitet über `+Tiefenvariabilitaet__AbschOekomorph.rTiefenvariabilitaet+`
+| `+Tiefenvariabilitaet+`
+| Wert von `+Sohlenverbauung.OID+` +
+hergeleitet über `+Sohlenverbauung__AbschOekomorph.rSohlenverbauung+`
+| `+Sohlenverbauung+`
+| Wert von `+Sohlmaterial.OID+` +
+hergeleitet über `+Sohlmaterial__AbschOekomorph.rSohlmaterial+`
+| `+Sohlmaterial+`
+| Wert von `+Boeschungsfussverbau.OID+` +
+hergeleitet über `+BoeschungsfussverbauLinks__AbschOekomorph.rBoeschungsfussverbauLinks+`
+| `+BoeschVB_l+`
+| Wert von `+Boeschungsfussverbau.OID+` +
+hergeleitet über `+BoeschungsfussverbauRechts__AbschOekomorph.rBoeschungsfussverbauRechts+`
+| `+BoeschVB_r+`
+| Wert von `+Boeschungsmaterial.OID+` +
+hergeleitet über `+BoeschungsmaterialLinks__AbschOekomorph.rBoeschungsmaterialLinks+`
+| `+Material_l+`
+| Wert von `+Boeschungsmaterial.OID+` +
+hergeleitet über `+BoeschungsmaterialRechts__AbschOekomorph.rBoeschungsmaterialRechts+`
+| `+Material_r+`
+| `+UferbreiteLinks+`
+| `+Uferbrei_l+`
+| `+UferbreiteRechts+`
+| `+Uferbrei_r+`
+| Wert von `+Uferbeschaffenheit.OID+` +
+hergeleitet über `+UferbeschaffenheitLinks__AbschOekomorph.rUferbeschaffenheitLinks+`
+| `+Uferbesc_l+`
+| Wert von `+Uferbeschaffenheit.OID+` +
+hergeleitet über `+UferbeschaffenheitRechts__AbschOekomorph.rUferbeschaffenheitRechts+`
+| `+Uferbesc_r+`
+| Wert von `+Bewuchs.OID+` +
+hergeleitet über `+Algenbewuchs__AbschOekomorph.rAlgenbewuchs+`
+| `+Algenbewuchs+`
+| Wert von `+Bewuchs.OID+` +
+hergeleitet über `+Makrophytenbewuchs__AbschOekomorph.rMakrophytenbewuchs+`
+| `+Makrophytenbewuchs+`
+| Wert von `+Totholz.OID+` +
+hergeleitet über `+Totholz__AbschOekomorph.rTotholz+`
+| `+Totholz+`
+| Wert von `+Klasse.OID+` +
+hergeleitet über `+Klasse__AbschOekomorph.rKlasse+`
+| `+Klasse+`
+| `+Bemerkung+`
+| `+Notizen+`
 |===
 
-==== Klasse `+Eigentumsbeschraenkung+`
+==== Klasse `+Absturz+`
 [cols=2*,options="header"]
 |===
 | Quellattribut | Zielattribut
-| Der Wert für `+Rechtsstatus+` wird regelbasiert abgeleitet (siehe unten) | `+Rechtsstatus+`
-| Datum, an dem die Publikation im ÖREB-Katastersystem erfolgt; wird durch den Publikationsprozess gesetzt m| publiziertAb
-| (aktuell nicht verwendet und daher leer) m| publiziertBis
+| Punktgeometrie, gebildet über die lineare Referenzierung auf der Grundlage von `+Achsgeometrie+` und `+Linearposition+` | `+Ort+`
+| `+Kennung+` | `+Nummer+`
+| Wert von `+Absturztyp.OID+` +
+hergeleitet über `+Absturztyp__Absturz.rAbsturztyp+` | `+Typ+`
+| Wert von `+Absturzmaterial.OID+` +
+hergeleitet über `+Absturzmaterial__Absturz.rAbsturzmaterial+` | `+Material+`
+| `+Hoehe+` | `+Hoehe+`
+| `+Bemerkung+` | `+Notizen+`
 |===
 
-Regeln für die Ableitung des Wertes für `+Rechtsstatus+`:
-|===
-h| Regel h| Rechtsstatus
-a| Der Wert von `+Waldgrenze.Begruendungsverfahren+` muss gesetzt sein und der Wert von `+Waldgrenze.Aufhebungsverfahren+` muss leer sein. +
-Zudem darf der Code des Waldfeststellungstatus `+Verfahrensstatus.Code+` (hergeleitet über `+Waldfeststellung.rVerfahrensstatus+`) nicht einer der folgenden Werte aufweisen: 'abgeschlossen', 'abgeschlossen_ohne_Verfuegung', 'unbekannt'.
-| `+laufendeAenderung_Begruendung+`
-| Der Wert von `+Waldgrenze.Begruendungsverfahren+` muss gesetzt sein und der Wert von `+Waldgrenze.Aufhebungsverfahren+` muss leer sein. +
-Zudem muss der Code des Waldfeststellungstatus `+Verfahrensstatus.Code+` (hergeleitet über `+Waldfeststellung.rVerfahrensstatus+`) den Wert 'abgeschlossen' aufweisen. | `+inKraft+`
-| Die Werte von `+Waldgrenze.Begruendungsverfahren+` und `+Waldgrenze.Aufhebungsverfahren+` müssen gesetzt sein. +
-Zudem darf der Code des Waldfeststellungstatus `+Verfahrensstatus.Code+` des Aufhebungsverfahrens (hergeleitet über `+Waldfeststellung.rVerfahrensstatus+`) nicht einer der folgenden Werte aufweisen: 'abgeschlossen', 'abgeschlossen_ohne_Verfuegung', 'unbekannt'.
-| `+laufendeAenderung_Aufhebung+`
-| Die Werte von `+Waldgrenze.Begruendungsverfahren+` und `+Waldgrenze.Aufhebungsverfahren+` müssen gesetzt sein. +
-Zudem muss der Code des Waldfeststellungstatus `+Verfahrensstatus.Code+` des Aufhebungsverfahrens (hergeleitet über `+Waldfeststellung.rVerfahrensstatus+`) den Wert 'abgeschlossen' aufweisen.
-| `+inKraft_Aufhebung+`
-|===
-
-==== Klasse `+Geometrie+`
+==== Klasse `+Bauwerk+`
 [cols=2*,options="header"]
 |===
 | Quellattribut | Zielattribut
-| - - - m| Punkt
-m| Waldgrenze.Geometrie m| Linie
-| - - - m| Flaeche
-| analog `+Eigentumsbeschraenkung.Rechtsstatus+` m| Rechtsstatus
-| analog `+Eigentumsbeschraenkung.publiziertAb+` m| publiziertAb
-| analog `+Eigentumsbeschraenkung.publiziertBis+` m| publiziertBis
-| https://www.geocat.ch/geonetwork/srv/ger/catalog.search#/metadata/8646c41b-543e-401f-836d-4b6beca7370d[Link auf GeoCat] m| MetadatenGeobasisdaten
+| Punktgeometrie, gebildet über die lineare Referenzierung auf der Grundlage von `+Achsgeometrie+` sowie `+Linearposition+` und `+Querabstand+` | `+Ort+`
+| `+Kennung+` | `+Identifikator+`
+a| Wert von `+Bauwerktyp.OID+` +
+hergeleitet über `+Bauwerktyp__Bauwerk.rBauwerktyp+` +
+Regel +
+Die Werte von
+
+- `+andere_nicht_kartierter_Zufluss+`,
+- `+andere_Einleitung+`,
+- `+andere_Ablagerung+` und
+- `+andere+`
+
+sind dem Bundestyp `+Bauwerktyp1+` ("nicht bestimmt") zuzuordnen.
+| `+Typ+`
+| `+Hoehe+` | `+Hoehe+`
+| `+Bemerkung+` | `+Notizen+`
 |===
 
-==== Klasse `+LegendeEintrag+`
-[cols=2*,options="header"]
-|===
-| Quellattribut | Zielattribut
-m| Typ.Symbol m| Symbol
-m| Typ.Name m| LegendeText
-m| Typ.Code m| ArtCode
-m| https://data.geo.sz.ch/public/Themen/A057b/[Legende.xml] m| ArtCodeliste
-| fix: " `+ch.StatischeWaldgrenzen+` " m| Thema
-| - - - m| SubThema
-|===
+==== Klasse `+AbschOEB+`
+Die Daten zu dieser Klasse werden im Thema A180 geführt. Die Transformationsregeln finden sich https://ch-sz-geo.github.io/A180/docs/modelldokumentation.html#_transformation_ins_minimale_geodatenmodell_des_bundes[hier].
 
-=== Transformation ins WebGIS
-* Quellmodell: Das hier beschriebene Datenmodell
-* Zielmodell: keines (siehe unten)
+==== Klasse `+AbschNutzen+`
+Die Daten zu dieser Klasse werden im Thema A180 geführt. Die Transformationsregeln finden sich https://ch-sz-geo.github.io/A180/docs/modelldokumentation.html#_transformation_ins_minimale_geodatenmodell_des_bundes[hier].
 
-==== Allgemeines
-Für die WebGIS-Publikation werden die Daten optimiert. Dies ist häufig mit einer Denormalisierung verbunden ("flachwalzen" der Daten). Der Attributumfang richtet sich nach den Anforderungen der zuständigen Stelle und ist im Normalfall geringer als im Ausgangsmodell. Eine weitere Besonderheit kommt den Tabellen der WebGIS-Datenbank zu. Sie weisen Standard-Spalten auf, welche nicht Teil des Datenmodells sind. Es handelt sich um folgende Spalten:
+==== Klasse `+AbschPrio+`
+Die Daten zu dieser Klasse werden im Thema A180 geführt. Die Transformationsregeln finden sich https://ch-sz-geo.github.io/A180/docs/modelldokumentation.html#_transformation_ins_minimale_geodatenmodell_des_bundes[hier].
 
-**Standardspalten:**
-[cols=2*,options="header"]
-|===
-| Spaltenname | Beschreibung
-m| id | eindeutige Identifikation des Objektes; kann von der OID der Ausgangsdaten abweichen, falls Objekte zum Zweck der Publikation aufgeteilt werden müssen
-m| etl_dt | Zeitstempel, an dem der Datensatz in die Tabelle geschrieben wurde (etl: extract - transfer - load)
-m| etl_job | Name des Jobs, mit dem die Daten auf die Tabelle geschrieben wurde
-m| asof_dt | Datum, an dem am Datensatz die letzten Änderungen vorgenommen wurden. Dieser Wert wird in den Metadaten des Datensatzes nachgeführt.
-|===
-
-Das WebGIS bezieht die Daten direkt aus der Datenbank. Aus diesem Grund wird nachfolgend von "Tabelle" und "Spalte" anstelle von "Klasse" und "Attribut" gesprochen. Der Klassenname erscheint lediglich in der Überschrift.
-
-==== Tabelle der `+Waldgrenze+`
-[cols=2*,options="header"]
-|===
-| Quellattribut | Zielspalte
-| - - - | (Standardspalten gemäss den Angaben oben)
-| `+Typ.Code+` +
-hergeleitet über `+Waldgrenze.rTyp+` m| typ
-| `+Typ.Name+` +
-hergeleitet über `+Waldgrenze.rTyp+` m| bezeichnung
-m| Waldgrenze.Geometrie m| geom
-|===
-
-==== Tabelle der `+Stockgrenze+`
-[cols=2*,options="header"]
-|===
-| Quellattribut | Zielspalte
-| - - - | (Standardspalten gemäss den Angaben oben)
-| `+Verfahren.Verfuegungsnummer+` +
-hergeleitet über: +
-`+Stockgrenze.rWaldgrenze+` &#x2192; +
-`+Waldgrenze.Begruendungsverfahren+`
-m| verfuegung_datum_nr
-m| Stockgrenze.Geometrie m| geom
-|===
-
-[cols="e,m,^,>s",width="25%"]
-|===
-|1 >s|2 |3 |4
-^|5 2.2+^.^|6 .3+<.>m|7
-^|8
-|9 2+>|10
-|===
+==== Klasse `+AbsturzNutzen+`
+Die Daten zu dieser Klasse werden im Thema A180 geführt. Die Transformationsregeln finden sich https://ch-sz-geo.github.io/A180/docs/modelldokumentation.html#_transformation_ins_minimale_geodatenmodell_des_bundes[hier].
 
 
 ifdef::backend-pdf[]
