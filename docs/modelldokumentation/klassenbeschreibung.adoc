@@ -276,8 +276,8 @@ m|Name
 3+| Die Werte müssen eindeutig sein
 |===
 
-=== Topic `+Fachdaten+`
-Das Topic `+Fachdaten+` umfasst die eigentlichen, fachlichen Klassen des Themas.
+=== Topic `+Oekomorphologie+`
+Das Topic `+Oekomorphologie+` umfasst die eigentlichen, fachlichen Klassen des Themas.
 
 ==== Klasse `+AbschOekomorph+`
 Die Klasse `+AbschOekomorph+` führt die Informationen zu ökomorphologischen Klassierung eines definierten Abschnittes.
