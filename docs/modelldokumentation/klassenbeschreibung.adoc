@@ -363,27 +363,27 @@ m| rSohlmaterial
 | ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
 | öffentlich
 m| rBoeschungsfussverbauLinks
-| Fremdschlüssel zum Katalog `+BoeschungsfussverbauLinks+`, welcher mit dem Objekt verknüpft ist.
+| Fremdschlüssel zum Katalog `+Boeschungsfussverbau+`, welcher mit dem Objekt verknüpft ist.
 | ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
 | öffentlich
 m| rBoeschungsfussverbauRechts
-| Fremdschlüssel zum Katalog `+BoeschungsfussverbauRechts+`, welcher mit dem Objekt verknüpft ist.
+| Fremdschlüssel zum Katalog `+Boeschungsfussverbau+`, welcher mit dem Objekt verknüpft ist.
 | ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
 | öffentlich
 m| rBoeschungsmaterialLinks
-| Fremdschlüssel zum Katalog `+BoeschungsmaterialLinks+`, welcher mit dem Objekt verknüpft ist.
+| Fremdschlüssel zum Katalog `+Boeschungsmaterial+`, welcher mit dem Objekt verknüpft ist.
 | ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
 | öffentlich
 m| rBoeschungsmaterialRechts
-| Fremdschlüssel zum Katalog `+BoeschungsmaterialRechts+`, welcher mit dem Objekt verknüpft ist.
+| Fremdschlüssel zum Katalog `+Boeschungsmaterial+`, welcher mit dem Objekt verknüpft ist.
 | ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
 | öffentlich
 m| rUferbeschaffenheitLinks
-| Fremdschlüssel zum Katalog `+UferbeschaffenheitLinks+`, welcher mit dem Objekt verknüpft ist.
+| Fremdschlüssel zum Katalog `+Uferbeschaffenheit+`, welcher mit dem Objekt verknüpft ist.
 | ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
 | öffentlich
 m| rUferbeschaffenheitRechts
-| Fremdschlüssel zum Katalog `+UferbeschaffenheitRechts+`, welcher mit dem Objekt verknüpft ist.
+| Fremdschlüssel zum Katalog `+Uferbeschaffenheit+`, welcher mit dem Objekt verknüpft ist.
 | ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
 | öffentlich
 m| rAlgenbewuchs
@@ -403,19 +403,19 @@ m| rKlasse
 | ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
 | öffentlich
 m| rUferbereichLinks
-| Fremdschlüssel zum Katalog `+UferbereichLinks+`, welcher mit dem Objekt verknüpft ist.
+| Fremdschlüssel zum Katalog `+Uferbereich+`, welcher mit dem Objekt verknüpft ist.
 | ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
 | öffentlich
 m| rUferbereichRechts
-| Fremdschlüssel zum Katalog `+UferbereichRechts+`, welcher mit dem Objekt verknüpft ist.
+| Fremdschlüssel zum Katalog `+Uferbereich+`, welcher mit dem Objekt verknüpft ist.
 | ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
 | öffentlich
 m| rUmlandnutzungLinks
-| Fremdschlüssel zum Katalog `+UmlandnutzungLinks+`, welcher mit dem Objekt verknüpft ist.
+| Fremdschlüssel zum Katalog `+Umlandnutzung+`, welcher mit dem Objekt verknüpft ist.
 | ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
 | öffentlich
 m| rUmlandnutzungRechts
-| Fremdschlüssel zum Katalog `+UmlandnutzungRechts+`, welcher mit dem Objekt verknüpft ist.
+| Fremdschlüssel zum Katalog `+Umlandnutzung+`, welcher mit dem Objekt verknüpft ist.
 | ccee2bad-419e-454e-9e0f-9ef2ae2d4d44
 | öffentlich
 m| rGefaelle
@@ -589,7 +589,7 @@ Das Topic `+Metadaten+` umfasst eine Klasse, welche Informationen zu den Fachdat
 ==== Klasse `+Bearbeitung+`
 Die Klasse `+Bearbeitung+` enthält Metadaten über den Fachdatensatz. Eine wichtige Information ist die Angabe des Referenzdatensatzes, auf welchem die Daten erhoben wurden. Die Fachdaten können nur über diesen Referenzdatensatz räumlich korrekt dargestellt werden.
 
-Auf der Klasse `+Bearbeitung+` darf nur ein einziger Eintrag stehen. Dies deshalb, weil die Ökomorphologie sich auf genau einen Fliessgewässerreferenzstand bezieht und nur genau ein letztes Nachführungsdatum (`+Stand+`) aufweisen kann. Dieser eine Eintrag wird über das Singleton-Pattern erzwungen (siehe die Definition der Beziehung der Klasse `+Bearbeitung+`).
+Auf der Klasse `+Bearbeitung+` darf nur ein einziger Eintrag stehen. Dies deshalb, weil die Ökomorphologie sich auf genau einen Fliessgewässerreferenzstand bezieht. Dieser eine Eintrag wird über das Singleton-Pattern erzwungen (siehe die Definition der Beziehung der Klasse `+Bearbeitung+`).
 
 [cols=4*,options="header"]
 |===
