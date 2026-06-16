@@ -72,7 +72,7 @@ hergeleitet über `+Klasse__AbschOekomorph.rKlasse+`
 |===
 | Quellattribut | Zielattribut
 | Punktgeometrie, gebildet über die lineare Referenzierung auf der Grundlage von `+Achsgeometrie+` und `+Linearposition+` | `+Ort+`
-| `+Schutzbauten_ID+` | `+Nummer+`
+| `+Kennung+` | `+Nummer+`
 | Wert von `+Absturztyp.OID+` +
 hergeleitet über `+Absturztyp__Absturz.rAbsturztyp+` | `+Typ+`
 | Wert von `+Absturzmaterial.OID+` +
@@ -86,7 +86,7 @@ hergeleitet über `+Absturzmaterial__Absturz.rAbsturzmaterial+` | `+Material+`
 |===
 | Quellattribut | Zielattribut
 | Punktgeometrie, gebildet über die lineare Referenzierung auf der Grundlage von `+Achsgeometrie+` sowie `+Linearposition+` und `+Querabstand+` | `+Ort+`
-| `+Schutzbauten_ID+` | `+Identifikator+`
+| `+Kennung+` | `+Identifikator+`
 a| Wert von `+Bauwerktyp.OID+` +
 hergeleitet über `+Bauwerktyp__Bauwerk.rBauwerktyp+` +
 Regel +
