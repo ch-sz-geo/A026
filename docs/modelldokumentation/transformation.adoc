@@ -97,29 +97,23 @@ Die Werte von
 - `+andere_Ablagerung+` und
 - `+andere+`
 
-sind dem Bundestyp `+Bauwerkstyp1+` ("nicht bestimmt") zuzuordnen.
+sind dem Bundestyp `+Bauwerktyp1+` ("nicht bestimmt") zuzuordnen.
 | `+Typ+`
 | `+Hoehe+` | `+Hoehe+`
 | `+Bemerkung+` | `+Notizen+`
 |===
 
 ==== Klasse `+AbschOEB+`
-Die Daten zu dieser Klasse werden im Thema A180 geführt. Die Transformationsregel finden sich https://ch-sz-geo.github.io/A180/docs/modelldokumentation.html#_transformation_ins_minimale_geodatenmodell_des_bundes[hier].
+Die Daten zu dieser Klasse werden im Thema A180 geführt. Die Transformationsregeln finden sich https://ch-sz-geo.github.io/A180/docs/modelldokumentation.html#_transformation_ins_minimale_geodatenmodell_des_bundes[hier].
 
 ==== Klasse `+AbschNutzen+`
-Die Daten zu dieser Klasse werden im Thema A180 geführt. Die Transformationsregel finden sich https://ch-sz-geo.github.io/A180/docs/modelldokumentation.html#_transformation_ins_minimale_geodatenmodell_des_bundes[hier].
+Die Daten zu dieser Klasse werden im Thema A180 geführt. Die Transformationsregeln finden sich https://ch-sz-geo.github.io/A180/docs/modelldokumentation.html#_transformation_ins_minimale_geodatenmodell_des_bundes[hier].
 
 ==== Klasse `+AbschPrio+`
-Die Daten zu dieser Klasse werden im Thema A180 geführt. Die Transformationsregel finden sich https://ch-sz-geo.github.io/A180/docs/modelldokumentation.html#_transformation_ins_minimale_geodatenmodell_des_bundes[hier].
+Die Daten zu dieser Klasse werden im Thema A180 geführt. Die Transformationsregeln finden sich https://ch-sz-geo.github.io/A180/docs/modelldokumentation.html#_transformation_ins_minimale_geodatenmodell_des_bundes[hier].
 
 ==== Klasse `+AbsturzNutzen+`
-[cols=2*,options="header"]
-|===
-| Quellattribut | Zielattribut
-| Wert von `+Nutzen.OID+` +
-hergeleitet über `+Nutzen__Absturz.rNutzen+` | `+Nutzen+`
-| `+Bemerkung_Nutzen+` | `+Bemerkung+`
-|===
+Die Daten zu dieser Klasse werden im Thema A180 geführt. Die Transformationsregeln finden sich https://ch-sz-geo.github.io/A180/docs/modelldokumentation.html#_transformation_ins_minimale_geodatenmodell_des_bundes[hier].
 
 === [todo] Transformation ins WebGIS
 * Quellmodell: Das hier beschriebene Datenmodell
