@@ -479,7 +479,7 @@ m| Schutzbauten_ID
 | öffentlich
 m| Hoehe
 | Absturzhöhe in Zentimeter
-| 1.2
+| 120
 | öffentlich
 m| Erhebungsdatum
 | Datum, an dem die Datenerhebung erfolgte.
@@ -557,7 +557,7 @@ m| Querabstand
 | öffentlich
 m| Hoehe
 | Bauwerkshöhe in Zentimeter
-| 3.7
+| 175
 | öffentlich
 m| Erhebungsdatum
 | Datum, an dem die Datenerhebung erfolgte.
