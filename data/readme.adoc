@@ -12,7 +12,7 @@ Bei der Bewirtschaftung eines Themas gibt es Attribute, deren Werte nicht frei e
 (2025-05-12)
 | 2026-06-12
 | Diese Datei enthält die aktuell gültigen Stammdaten für die Datenerfassung.
-| https://raw.githubusercontent.com/ch-sz-geo/A026/4970187288368ffd4722cb92b1a2fb345367e0f8/data/Stammdaten.xtf[*Datei*]
+| https://raw.githubusercontent.com/ch-sz-geo/A026/main/data/Stammdaten.xtf[*Datei*]
 | SZ_Oekomorphologie_Fliessgewaesser_V1_1 +
 (2024-07-24)
 | 2024-07-24
